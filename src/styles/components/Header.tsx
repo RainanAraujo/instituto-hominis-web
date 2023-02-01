@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
+export const Container = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 24px 80px;
-    gap: 129px;
-    width: 1040px;
-    height: 99px;
+    width: 100%;
+    max-width: 1280px;
     ul {
         display: flex;
         flex-direction: row;
@@ -30,9 +29,10 @@ export const Header = styled.header`
         a {
             color: white;
             font-weight: 400;
+            transition: all .2s;
             &:hover{
-               line-height: 1.4rem;
-               border-bottom: 2px solid white;
+               line-height:1.4rem;
+               border-bottom: 3px solid white;
            }
         }
     }

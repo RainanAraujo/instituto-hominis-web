@@ -1,8 +1,8 @@
-import { Header } from "../styles/components/Header";
+import { Container } from "@/styles/components/Header";
 import Image from "next/image";
-export default function Heading() {
+export default function Header() {
     return (
-        <Header>
+        <Container>
             <Image
                 src="/images/Layer_x0020_1.svg"
                 width={81}
@@ -43,6 +43,6 @@ export default function Heading() {
                     </li>
                 </ul>
             </menu>
-        </Header>
+        </Container>
     );
 }
