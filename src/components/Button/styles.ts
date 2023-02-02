@@ -1,23 +1,40 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Container = styled.a`
+interface IConteiner {
+    outlined?: boolean
+}
+
+const Container = styled.button<IConteiner>`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 18px;
 
     width: 240px;
     padding: 16px 32px;
-    background-color: #215d7f;
+    background-color: ${(props) => props.theme.colors.blue300};
     border-radius: 10px;
+    border: none;
 
+    font-size:16px;
+    font-weight:600;
     color: white;
-    transition:background-color .2s;
+    transition: background-color 0.2s;
+    cursor: pointer;
     &:hover {
-        background-color: #2c78a3;
+        background-color: ${(props) => props.theme.colors.blue500};
     }
-    > p {
-        color: white;
-    }
+
+    ${({ outlined, theme }) =>
+        outlined &&
+        css`
+            background-color: transparent;
+            border: 1px solid ${theme.colors.blue300};
+            color: ${theme.colors.blue300};
+            &:hover{
+                background-color: transparent;
+            }
+        `};
 `;
 
 export default Container;

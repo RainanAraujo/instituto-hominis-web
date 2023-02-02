@@ -7,6 +7,8 @@ export const Container = styled.footer`
     min-height: 350px;
     width: 100%;
     max-width: 1280px;
+    
+    background-color: ${(props) => props.theme.colors.black};
 
     margin: 0 auto;
     padding: 72px 80px 44px;
@@ -41,9 +43,9 @@ export const Container = styled.footer`
             color: #e1e1e1;
         }
     }
-    .socialNetworkingIcons{
+    .socialNetworkingIcons {
         display: flex;
-        align-items:center;
+        align-items: center;
         gap: 4px;
         svg {
             color: #3a9dd7;

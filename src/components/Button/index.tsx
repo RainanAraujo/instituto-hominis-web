@@ -1,16 +1,15 @@
+import React from 'react'
 import Container from './styles';
-import {Phone} from 'phosphor-react';
 
 interface Button{
-  Text: string
+  outlined?: boolean;
+  children?: React.ReactNode;
 }
 
-
-export default function Button(props:Button){
+export default function Button({children, outlined}:Button){
   return (
-      <Container href="#">
-          <Phone size={22} weight="bold" />
-          <p>{props.Text}</p>
+      <Container outlined={outlined}>
+          {children}
       </Container>
   );
 }

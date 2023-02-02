@@ -5,6 +5,9 @@ export const Container = styled.header`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    background-color: ${(props) => props.theme.colors.black};
+
     margin: 0 auto;
     padding: 24px 80px;
     width: 100%;
