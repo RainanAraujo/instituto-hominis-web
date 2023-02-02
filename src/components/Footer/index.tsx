@@ -13,7 +13,6 @@ export default function Footer() {
                     height={58}
                     alt="Logo do Instituto Hominis"
                 />
-                <div className="linkWrap">
                     <div className="linkColumn">
                         <h3>Saiba mais</h3>
                             <div className="linkGroup">
@@ -40,7 +39,7 @@ export default function Footer() {
                     </div>
                     <div className="linkColumn">
                         <h3>Redes sociais</h3>
-                            <div className="linkGroup">
+                            <div className="socialNetworkingIcons">
                                 <Link href="#">
                                   <WhatsappLogo size={32} weight="regular" width={24} height={24}/>
                                 </Link>
@@ -49,7 +48,6 @@ export default function Footer() {
                                 </Link>
                             </div>
                     </div>
-                </div>
             </div>
             <p>© 2023 INSTITUTO HOMINIS | Todos os Direitos Reservados</p>
         </Container>

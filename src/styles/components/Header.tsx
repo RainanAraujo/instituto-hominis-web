@@ -26,14 +26,16 @@ export const Container = styled.header`
         order: 1;
         flex-grow: 0;
         font-size: 16px;
-        a {
-            color: white;
-            font-weight: 400;
-            transition: all .2s;
-            &:hover{
-               line-height:1.4rem;
-               border-bottom: 3px solid white;
-           }
+        > li {
+            transition: all 0.2s;
+            &:hover {
+                transform: translateY(-10%);
+                border-bottom: 3px solid white;
+            }
+            a {
+                color: white;
+                font-weight: 400;
+            }
         }
     }
 `;

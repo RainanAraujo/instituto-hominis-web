@@ -21,16 +21,8 @@ export const Container = styled.footer`
     }
     .wrapperFooter {
         display: flex;
+        width: 100%;
         justify-content: space-between;
-        > img {
-            margin-right: 126px;
-        }
-    }
-    .linkWrap {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        height: 100%;
-        gap: 16px;
     }
     .linkColumn {
         > h3 {
@@ -47,9 +39,14 @@ export const Container = styled.footer`
         gap: 12px;
         > a {
             color: #e1e1e1;
-            > svg {
-                color: #3a9dd7;
-            }
+        }
+    }
+    .socialNetworkingIcons{
+        display: flex;
+        align-items:center;
+        gap: 4px;
+        svg {
+            color: #3a9dd7;
         }
     }
 `;
