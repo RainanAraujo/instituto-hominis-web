@@ -1,26 +1,90 @@
 import Head from "next/head";
-<<<<<<< Updated upstream
-import { Container } from "../styles/pages/Home";
-=======
-import { Container, Objetivos, Propostas, Blog } from "../styles/pages/Home";
-import Heading from "@/components/Header";
-import { Target, Eye, SketchLogo, UsersThree, Handshake } from "phosphor-react";
-import Button from "@/components/Button1";
-import Posts from "@/components/Button2";
->>>>>>> Stashed changes
+import {
+  Container,
+  Presentation,
+  KeyWord,
+  Objetivos,
+  Propostas,
+  Blog,
+} from "@/styles/pages/Home";
+import Header from "@/components/Header";
+import Button from "@/components/Button";
+import Footer from "@/components/Footer";
+import Image from "next/image";
+import {
+  Heartbeat,
+  HandFist,
+  Student,
+  Eye,
+  SketchLogo,
+  Target,
+  UsersThree,
+  Handshake,
+  Phone,
+} from "phosphor-react";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Instituto Hominis</title>
       </Head>
-<<<<<<< Updated upstream
-      <Container></Container>
-=======
       <Container>
-        <Heading />
-
+        <Header />
+        <Presentation>
+          <div className="content">
+            <div className="containerTitle ">
+              <h1>O Instituto para a sua vida</h1>
+              <p>
+                A melhor forma mostrar texto sbtitulo texto para texto subtitulo
+                A melhor forma mostrar texto sbtitulo texto para texto subtitulo
+                lorem
+              </p>
+              <Button>
+                <Phone size={18} weight="bold" />
+                Entre em contato
+              </Button>
+            </div>
+            <div className="containerImages">
+              <div className="largerImage">
+                <div className="smallerImage"></div>
+              </div>
+            </div>
+          </div>
+        </Presentation>
+        <KeyWord>
+          <div className="contentKeyWords limitWidth">
+            <div className="wordKeyConceptions">
+              <h1>Palavras chaves para definir o conceito</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+                earum voluptatem delectus fugit ratione, nobis placeat iusto cum
+                corrupti magni neque totam, quidem quia adipisci velit dolore
+                aliquid maxime dicta.
+              </p>
+              <div className="groupWordsCards">
+                <div className="wordCard">
+                  <Heartbeat
+                    size={32}
+                    width={32}
+                    height={32}
+                    weight="regular"
+                  />
+                  <strong>Saúde</strong>
+                </div>
+                <div className="wordCard">
+                  <HandFist size={32} width={32} height={32} weight="regular" />
+                  <strong>Assitência social</strong>
+                </div>
+                <div className="wordCard">
+                  <Student size={24} width={32} height={32} weight="regular" />
+                  <strong>Educação</strong>
+                </div>
+              </div>
+            </div>
+            <div className="imageConcept"></div>
+          </div>
+        </KeyWord>
         <Objetivos>
           <div className="card ">
             <div className="bg-target">
@@ -68,7 +132,7 @@ export default function Home() {
         <Propostas>
           <div className="titulo">
             <h1>A solução para texto texto</h1>
-            <Button />
+            <Button>Qualquer coisa</Button>
           </div>
           <div className="card_1">
             <div className="icon">
@@ -97,7 +161,12 @@ export default function Home() {
           <div className="principal">
             <h1>Oferecemos o melhor para você</h1>
             <figure className="imgPrincipal">
-              <img src="/images/foto.png" alt="" />
+              <Image
+                src="/images/Layer_x0020_1.svg"
+                width={40}
+                height={40}
+                alt="Imagem"
+              />
             </figure>
             <div className="titulo">
               <h2>The standard Lorem Ipsum passage, used since...</h2>
@@ -113,12 +182,17 @@ export default function Home() {
 
           <div className="feed">
             <div className="botaoPost">
-              <Posts />
+              <Button outlined={true}>Qualquer coisa</Button>
             </div>
 
             <div className="card_1">
               <figure className="miniatura">
-                <img src="/images/foto.png" alt="" />
+                <Image
+                  src="/images/Layer_x0020_1.svg"
+                  width={40}
+                  height={40}
+                  alt="Imagem"
+                />
               </figure>
               <div className="texto">
                 <div className="titulo">
@@ -135,7 +209,12 @@ export default function Home() {
             </div>
             <div className="card_2">
               <figure className="miniatura">
-                <img src="/images/foto.png" alt="" />
+                <Image
+                  src="/images/Layer_x0020_1.svg"
+                  width={40}
+                  height={40}
+                  alt="Imagem"
+                />
               </figure>
               <div className="texto">
                 <div className="titulo">
@@ -152,8 +231,8 @@ export default function Home() {
             </div>
           </div>
         </Blog>
+        <Footer />
       </Container>
->>>>>>> Stashed changes
     </>
   );
 }

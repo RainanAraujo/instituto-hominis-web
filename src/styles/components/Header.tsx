@@ -1,16 +1,8 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 24px 80px;
-  gap: 129px;
-  width: 100%;
-  max-width: 1280px;
-  height: 99px;
+export const Container = styled.header`
+  background-color: ${(props) => props.theme.colors.black};
+
   ul {
     display: flex;
     flex-direction: row;
@@ -22,19 +14,31 @@ export const Header = styled.header`
     width: 615px;
     height: 24px;
 
-    /* Inside auto layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
     font-size: 16px;
-    a {
-      color: white;
-      font-weight: 400;
+    > li {
+      transition: all 0.2s;
       &:hover {
-        line-height: 1.4rem;
-        border-bottom: 2px solid white;
+        transform: translateY(-10%);
+        border-bottom: 3px solid white;
+      }
+      a {
+        color: white;
+        font-weight: 400;
       }
     }
+  }
+  .content {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${(props) => props.theme.colors.black};
+    margin: 0 auto;
+    padding: 24px 80px;
+    width: 100%;
   }
 `;
