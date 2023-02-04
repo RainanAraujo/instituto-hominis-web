@@ -201,7 +201,7 @@ export default function Home() {
           </div>
 
           <div className="feed">
-            <div className="card_1">
+            <div className="card">
               <figure className="miniatura">
                 <Image
                   src="/images/Layer_x0020_1.svg"
@@ -223,7 +223,7 @@ export default function Home() {
                 <a href="#">Ver mais</a>
               </div>
             </div>
-            <div className="card_2">
+            <div className="card">
               <figure className="miniatura">
                 <Image
                   src="/images/Layer_x0020_1.svg"
