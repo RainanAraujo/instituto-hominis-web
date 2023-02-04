@@ -11,7 +11,7 @@ const Container = styled.button<IContainer>`
   gap: 18px;
 
   width: 240px;
-  padding: 16px 32px;
+  padding: 16px;
   background-color: ${(props) => props.theme.colors.blue300};
   border-radius: 10px;
   border: none;

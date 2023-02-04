@@ -162,6 +162,14 @@ export const Objetivos = styled.section`
     line-height: 181%;
     color: ${(props) => props.theme.colors.gray600};
   }
+  ol {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 181%;
+    color: ${(props) => props.theme.colors.gray600};
+  }
   .bg-target {
     display: flex;
     justify-content: center;
@@ -201,6 +209,9 @@ export const Propostas = styled.section`
   width: 100%;
   background-color: white;
   flex-wrap: wrap;
+  .titulo button {
+    margin-top: 36px;
+  }
 
   .titulo h1 {
     color: ${(props) => props.theme.colors.black};
@@ -259,17 +270,11 @@ export const Blog = styled.section`
   padding: 24px 80px;
   width: 100%;
   background-color: white;
-
-  .principal h1 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 42px;
-    line-height: 105.02%;
-    color: ${(props) => props.theme.colors.black};
+  flex-wrap: wrap;
+  .principal {
     width: 522px;
-    height: 88px;
   }
+
   .principal h2 {
     font-family: "Inter";
     font-style: normal;
@@ -277,8 +282,6 @@ export const Blog = styled.section`
     font-size: 28px;
     line-height: 105.02%;
     color: ${(props) => props.theme.colors.black};
-    width: 307;
-    height: 50px;
   }
   .principal p {
     font-family: "Inter";
@@ -287,8 +290,6 @@ export const Blog = styled.section`
     font-size: 16px;
     line-height: 177.52%;
     color: ${(props) => props.theme.colors.gray600};
-    width: 467px;
-    height: 56px;
   }
   a {
     text-decoration: none;
@@ -339,11 +340,6 @@ export const Blog = styled.section`
     height: 189px;
     padding-left: 18px;
   }
-  .botaoPost {
-    display: flex;
-    justify-content: right;
-    padding-bottom: 72px;
-  }
 
   .feed h2 {
     font-family: "Inter";
@@ -361,5 +357,31 @@ export const Blog = styled.section`
     line-height: 177.52%;
     color: ${(props) => props.theme.colors.gray600};
     width: 306px;
+  }
+`;
+export const HeaderBlog = styled.section`
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 24px 80px;
+  width: 100%;
+  max-width: 1280px;
+  flex-wrap: wrap;
+  .botaoPost {
+    display: flex;
+    justify-content: right;
+    padding-bottom: 72px;
+  }
+  .cabeçalho h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 105.02%;
+    width: 522px;
+    height: 88px;
+    color: ${(props) => props.theme.colors.black};
   }
 `;
