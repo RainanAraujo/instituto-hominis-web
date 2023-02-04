@@ -146,7 +146,7 @@ export default function Home() {
               </Button>
             </a>
           </div>
-          <div className="card_1">
+          <div className="card">
             <div className="icon">
               <UsersThree size={46} />
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
               eu fugiat nulla pariatur
             </p>
           </div>
-          <div className="card_2">
+          <div className="card">
             <div className="icon">
               <Handshake size={46} />
             </div>
@@ -188,16 +188,14 @@ export default function Home() {
                 alt="Imagem"
               />
             </figure>
-            <div className="titulo">
+            <div className="texto">
               <h2>The standard Lorem Ipsum passage, used since...</h2>
-            </div>
-            <div className="descricao">
               <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, tota...
               </p>
+              <a href="#">Ver mais</a>
             </div>
-            <a href="#">Ver mais</a>
           </div>
 
           <div className="feed">

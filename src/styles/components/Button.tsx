@@ -9,13 +9,11 @@ const Container = styled.button<IContainer>`
   align-items: center;
   justify-content: center;
   gap: 18px;
-
   width: 240px;
   padding: 16px;
   background-color: ${(props) => props.theme.colors.blue300};
   border-radius: 10px;
   border: none;
-
   font-size: 16px;
   font-weight: 600;
   color: white;

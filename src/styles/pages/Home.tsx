@@ -147,19 +147,19 @@ export const Objetivos = styled.section`
   h2 {
     font-weight: 600;
     font-size: 20px;
-    line-height: 115.02%;
-    padding-bottom: 12px;
-    padding-top: 24px;
+    line-height: 1rem;
+    margin-bottom: 12px;
+    margin-top: 24px;
     color: ${(props) => props.theme.colors.black};
   }
   p {
     font-size: 16px;
-    line-height: 1.6rem;
+    line-height: 2rem;
     color: ${(props) => props.theme.colors.gray600};
   }
   ol {
     font-size: 16px;
-    line-height: 181%;
+    line-height: 2rem;
     color: ${(props) => props.theme.colors.gray600};
   }
   .bg-target {
@@ -178,7 +178,7 @@ export const Objetivos = styled.section`
     background-color: ${(props) => props.theme.colors.blue500};
     width: 64px;
     height: 64px;
-    border-radius: 8.88889px 8.88889px 0px 8.88889px;
+    border-radius: 8px 8px 0px 8px;
   }
   .bg-diamond {
     display: flex;
@@ -187,7 +187,7 @@ export const Objetivos = styled.section`
     background-color: ${(props) => props.theme.colors.green300};
     width: 64px;
     height: 64px;
-    border-radius: 8.88889px 8.88889px 0px 8.88889px;
+    border-radius: 8px 8px 0px 8px;
   }
 `;
 
@@ -201,31 +201,32 @@ export const Propostas = styled.section`
   width: 100%;
   background-color: white;
   flex-wrap: wrap;
-  .titulo button {
-    margin-top: 36px;
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    h1 {
+      color: ${(props) => props.theme.colors.black};
+      font-weight: 800;
+      font-size: 42px;
+      width: 343px;
+    }
   }
 
-  .titulo h1 {
-    color: ${(props) => props.theme.colors.black};
-
-    font-weight: 800;
-    font-size: 42px;
-    line-height: 105%;
-    width: 343px;
-  }
   .card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     width: 254px;
     height: 233px;
     transition: all 0.3s ease-out;
   }
   h2 {
     color: ${(props) => props.theme.colors.black};
-
     font-weight: 700;
     font-size: 28px;
     line-height: 105%;
-    padding-bottom: 24px;
-    padding-top: 24px;
     width: 161px;
     white-space: nowrap;
   }
@@ -252,56 +253,47 @@ export const Blog = styled.section`
   background-color: white;
   max-width: 1280px;
   .principal {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     width: 55%;
-  }
-
-  .principal h2 {
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 105.02%;
-    color: ${(props) => props.theme.colors.black};
-  }
-  .principal p {
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-
-    font-size: 16px;
-    line-height: 177.52%;
-    color: ${(props) => props.theme.colors.gray600};
-  }
-  a {
-    text-decoration: none;
-    color: ${(props) => props.theme.colors.blue300};
-
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 147.52%;
-  }
-
-  .principal img {
-    width: 100%;
-  }
-  .imgPrincipal {
-    padding-top: 58px;
-    padding-bottom: 24px;
-  }
-
-  .descricao {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    h2 {
+      font-weight: 500;
+      font-size: 28px;
+      color: ${(props) => props.theme.colors.black};
+    }
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme.colors.blue300};
+      font-weight: 600;
+      font-size: 16px;
+    }
+    p {
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      font-size: 16px;
+      line-height: 2rem;
+      color: ${(props) => props.theme.colors.gray600};
+    }
+    img {
+      width: 100%;
+    }
   }
 
   .card {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 18px;
   }
 
   .texto {
-    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .feed {
@@ -324,7 +316,6 @@ export const Blog = styled.section`
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
       display: -webkit-box;
-
       font-size: 16px;
       line-height: 177.52%;
       color: ${(props) => props.theme.colors.gray600};
