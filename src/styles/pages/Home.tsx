@@ -223,17 +223,11 @@ export const Propostas = styled.section`
     width: 343px;
     height: 88px;
   }
-  .card_1 {
+  .card {
     width: 254px;
     height: 233px;
     transition: all 0.3s ease-out;
   }
-  .card_2 {
-    width: 254px;
-    height: 233px;
-    transition: all 0.3s ease-out;
-  }
-
   h2 {
     color: ${(props) => props.theme.colors.black};
     font-family: "Inter";
@@ -270,9 +264,9 @@ export const Blog = styled.section`
   padding: 24px 80px;
   width: 100%;
   background-color: white;
-  flex-wrap: wrap;
+  max-width: 1280px;
   .principal {
-    width: 522px;
+    width: 55%;
   }
 
   .principal h2 {
@@ -284,6 +278,11 @@ export const Blog = styled.section`
     color: ${(props) => props.theme.colors.black};
   }
   .principal p {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
@@ -302,8 +301,7 @@ export const Blog = styled.section`
   }
 
   .principal img {
-    width: 467px;
-    height: 211px;
+    width: 100%;
   }
   .imgPrincipal {
     padding-top: 58px;
@@ -316,28 +314,25 @@ export const Blog = styled.section`
   }
 
   .feed img {
-    width: 305px;
-    height: 189px;
+    width: 254px;
   }
-  .card_1 {
+  .card {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .card_2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 25px;
-  }
+
   .feed img {
-    width: 305px;
-    height: 189px;
+    width: 252px;
+  }
+  .feed {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 24px;
   }
 
   .texto {
-    width: 307px;
-    height: 189px;
     padding-left: 18px;
   }
 
@@ -350,13 +345,17 @@ export const Blog = styled.section`
     color: ${(props) => props.theme.colors.black};
   }
   .feed p {
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 177.52%;
     color: ${(props) => props.theme.colors.gray600};
-    width: 306px;
   }
 `;
 export const HeaderBlog = styled.section`
