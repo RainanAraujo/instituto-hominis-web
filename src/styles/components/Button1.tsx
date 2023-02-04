@@ -9,7 +9,6 @@ export const Button1 = styled.button`
   width: 256px;
   height: 56px;
   border-style: none;
-  margin-top: 36px;
   a {
     color: white;
     font-family: "Inter";
