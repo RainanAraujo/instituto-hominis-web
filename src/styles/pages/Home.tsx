@@ -145,8 +145,6 @@ export const Objetivos = styled.section`
   }
 
   h2 {
-    font-family: "Inter";
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 115.02%;
@@ -155,17 +153,11 @@ export const Objetivos = styled.section`
     color: ${(props) => props.theme.colors.black};
   }
   p {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 181%;
+    line-height: 1.6rem;
     color: ${(props) => props.theme.colors.gray600};
   }
   ol {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 181%;
     color: ${(props) => props.theme.colors.gray600};
@@ -177,7 +169,7 @@ export const Objetivos = styled.section`
     background-color: ${(props) => props.theme.colors.blue300};
     width: 64px;
     height: 64px;
-    border-radius: 8.88889px 8.88889px 0px 8.88889px;
+    border-radius: 8px;
   }
   .bg-eye {
     display: flex;
@@ -215,13 +207,11 @@ export const Propostas = styled.section`
 
   .titulo h1 {
     color: ${(props) => props.theme.colors.black};
-    font-family: "Inter";
-    font-style: normal;
+
     font-weight: 800;
     font-size: 42px;
     line-height: 105%;
     width: 343px;
-    height: 88px;
   }
   .card {
     width: 254px;
@@ -230,8 +220,7 @@ export const Propostas = styled.section`
   }
   h2 {
     color: ${(props) => props.theme.colors.black};
-    font-family: "Inter";
-    font-style: normal;
+
     font-weight: 700;
     font-size: 28px;
     line-height: 105%;
@@ -241,9 +230,6 @@ export const Propostas = styled.section`
     white-space: nowrap;
   }
   p {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 139%;
     color: ${(props) => props.theme.colors.gray600};
@@ -270,8 +256,6 @@ export const Blog = styled.section`
   }
 
   .principal h2 {
-    font-family: "Inter";
-    font-style: normal;
     font-weight: 500;
     font-size: 28px;
     line-height: 105.02%;
@@ -283,9 +267,7 @@ export const Blog = styled.section`
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 16px;
     line-height: 177.52%;
     color: ${(props) => props.theme.colors.gray600};
@@ -293,8 +275,7 @@ export const Blog = styled.section`
   a {
     text-decoration: none;
     color: ${(props) => props.theme.colors.blue300};
-    font-family: "Inter";
-    font-style: normal;
+
     font-weight: 600;
     font-size: 16px;
     line-height: 147.52%;
@@ -313,49 +294,41 @@ export const Blog = styled.section`
     padding-bottom: 8px;
   }
 
-  .feed img {
-    width: 254px;
-  }
   .card {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .feed img {
-    width: 252px;
+  .texto {
+    padding-left: 18px;
   }
+
   .feed {
     display: flex;
     flex-direction: column;
     width: 50%;
     gap: 24px;
-  }
+    img {
+      width: 252px;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 105.02%;
+      color: ${(props) => props.theme.colors.black};
+    }
+    p {
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      display: -webkit-box;
 
-  .texto {
-    padding-left: 18px;
-  }
-
-  .feed h2 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 105.02%;
-    color: ${(props) => props.theme.colors.black};
-  }
-  .feed p {
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 177.52%;
-    color: ${(props) => props.theme.colors.gray600};
+      font-size: 16px;
+      line-height: 177.52%;
+      color: ${(props) => props.theme.colors.gray600};
+    }
   }
 `;
 export const HeaderBlog = styled.section`
@@ -374,8 +347,6 @@ export const HeaderBlog = styled.section`
     padding-bottom: 72px;
   }
   .cabeçalho h1 {
-    font-family: "Inter";
-    font-style: normal;
     font-weight: 800;
     font-size: 42px;
     line-height: 105.02%;
