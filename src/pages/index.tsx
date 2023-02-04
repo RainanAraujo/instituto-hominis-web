@@ -6,6 +6,7 @@ import {
   Objetivos,
   Propostas,
   Blog,
+  HeaderBlog,
 } from "@/styles/pages/Home";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
@@ -21,6 +22,7 @@ import {
   UsersThree,
   Handshake,
   Phone,
+  ArrowRight,
 } from "phosphor-react";
 
 export default function Home() {
@@ -123,16 +125,26 @@ export default function Home() {
               </div>
             </div>
             <h2>Valores</h2>
-            <p>
-              Valorização Respeito a vida Valorização e proteção
-              Responsabilidade Equidade Compromisso Transparência
-            </p>
+            <ol>
+              <li>Valorização</li>
+              <li>Respeito a vida </li>
+              <li> Valorização e proteção</li>
+              <li>Responsabilidade</li>
+              <li> Equidade </li>
+              <li>Compromisso</li>
+              <li>Transparência</li>
+            </ol>
           </div>
         </Objetivos>
         <Propostas>
           <div className="titulo">
             <h1>A solução para texto texto</h1>
-            <Button>Qualquer coisa</Button>
+            <a href="#">
+              <Button>
+                <ArrowRight size={24} color="white" />
+                Seja um fornecedor
+              </Button>
+            </a>
           </div>
           <div className="card_1">
             <div className="icon">
@@ -157,9 +169,17 @@ export default function Home() {
             </p>
           </div>
         </Propostas>
+        <HeaderBlog>
+          <div className="cabeçalho">
+            <h1>Oferecemos o melhor para você</h1>
+          </div>
+          <div className="botaoPost">
+            <Button outlined={true}>Ver todos os posts</Button>
+          </div>
+        </HeaderBlog>
+
         <Blog>
           <div className="principal">
-            <h1>Oferecemos o melhor para você</h1>
             <figure className="imgPrincipal">
               <Image
                 src="/images/Layer_x0020_1.svg"
@@ -181,10 +201,6 @@ export default function Home() {
           </div>
 
           <div className="feed">
-            <div className="botaoPost">
-              <Button outlined={true}>Qualquer coisa</Button>
-            </div>
-
             <div className="card_1">
               <figure className="miniatura">
                 <Image

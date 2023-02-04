@@ -11,7 +11,6 @@ export const Button1 = styled.button`
   border-style: none;
   margin-top: 36px;
   a {
-    padding: 16px;
     color: white;
     font-family: "Inter";
     font-style: normal;
