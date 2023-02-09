@@ -1,5 +1,6 @@
 import { Container } from "@/styles/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 export default function Header() {
   return (
     <Container>
@@ -13,34 +14,34 @@ export default function Header() {
         <menu>
           <ul>
             <li>
-              <a href="#" target="_self">
+              <Link href="/" target="_self">
                 Início
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="#" target="_self">
                 Quem somos
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="#" target="_self">
                 Notícias
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="#" target="_self">
                 Contato
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="/curriculum" target="_self">
                 Envie seu currículo
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="#" target="_self">
                 Seja um fornecedor
-              </a>
+              </Link>
             </li>
           </ul>
         </menu>
