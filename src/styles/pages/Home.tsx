@@ -28,18 +28,18 @@ export const Presentation = styled.section`
 
     color: white;
     > h1 {
-      font-size: 64px;
+      font-size: 4rem;
       font-weight: 700;
-      line-height: 64px;
+      line-height: 4rem;
 
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
     > p {
       text-align: left;
-      line-height: 24px;
-      font-size: 16px;
+      line-height: 1.5rem;
+      font-size: 1rem;
 
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
   }
   .containerImages {
@@ -77,14 +77,14 @@ export const KeyWord = styled.section`
       width: 551px;
       > h1 {
         font-weight: 600;
-        font-size: 42px;
+        font-size: 2.5rem;
         line-height: 44px;
         color: #092a3d;
         margin-bottom: 16px;
       }
       > p {
         color: #888888;
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 16px;
         line-height: 32px;
       }
@@ -146,7 +146,7 @@ export const Objetivos = styled.section`
 
   h2 {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 1rem;
     margin-bottom: 12px;
     margin-top: 24px;

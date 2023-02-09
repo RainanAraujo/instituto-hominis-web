@@ -34,12 +34,12 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/curriculum" target="_self">
+              <Link href="/curriculo" target="_self">
                 Envie seu currículo
               </Link>
             </li>
             <li>
-              <Link href="#" target="_self">
+              <Link href="/seja-fornecedor" target="_self">
                 Seja um fornecedor
               </Link>
             </li>
