@@ -32,7 +32,7 @@ export default function Home() {
         <title>Instituto Hominis</title>
       </Head>
       <Container>
-        <Header />
+        <Header color="primary" />
         <Presentation>
           <div className="content">
             <div className="containerTitle ">

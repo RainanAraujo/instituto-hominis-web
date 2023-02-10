@@ -21,5 +21,8 @@ export const theme = {
     gray600: "#888888",
     green300: "#418977",
     blue500: "#3A9DD7",
+    gray400: "#484848",
+    gray900: "#F1F1F1",
+    white: "#FFFFFF",
   },
 };

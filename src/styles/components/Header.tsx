@@ -1,7 +1,12 @@
 import styled from "styled-components";
-
-export const Container = styled.header`
-  background-color: ${(props) => props.theme.colors.black};
+interface HeaderProps {
+  color?: "primary" | "secondary";
+}
+export const Container = styled.header<HeaderProps>`
+  background-color: ${(props) =>
+    props.color === "primary"
+      ? props.theme.colors.black
+      : props.theme.colors.gray900};
 
   ul {
     display: flex;
@@ -22,10 +27,17 @@ export const Container = styled.header`
       transition: all 0.2s;
       &:hover {
         transform: translateY(-10%);
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid
+          ${(props) =>
+            props.color === "primary"
+              ? props.theme.colors.white
+              : props.theme.colors.black};
       }
       a {
-        color: white;
+        color: ${(props) =>
+          props.color === "primary"
+            ? props.theme.colors.white
+            : props.theme.colors.black};
         font-weight: 400;
       }
     }
@@ -36,7 +48,6 @@ export const Container = styled.header`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: ${(props) => props.theme.colors.black};
     margin: 0 auto;
     padding: 24px 80px;
     width: 100%;
