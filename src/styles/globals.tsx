@@ -9,11 +9,16 @@ export default createGlobalStyle`
         font-family: 'Inter', sans-serif;
         list-style-type: none;
         text-decoration: none;
+    }
+    :focus {
+        outline: 1px solid ${(props) => theme.colors.blue300};
+        
         
     }
 `;
 
 export const theme = {
+
   colors: {
     black: "#092A3D",
     blue300: "#215D7F",
@@ -25,4 +30,5 @@ export const theme = {
     gray900: "#F1F1F1",
     white: "#FFFFFF",
   },
+
 };

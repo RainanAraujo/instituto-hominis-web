@@ -14,7 +14,7 @@ const Container = styled.button<IContainer>`
   background-color: ${(props) => props.theme.colors.blue300};
   border-radius: 10px;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
   transition: background-color 0.2s;
