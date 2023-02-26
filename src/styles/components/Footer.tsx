@@ -18,7 +18,7 @@ export const Container = styled.footer`
     border-top: 1px solid #215d7f;
     padding: 32px 0px 0px;
 
-    font-size: 14px;
+    font-size: .9rem;
     font-weight: 500;
     text-align: center;
     color: white;
@@ -30,7 +30,7 @@ export const Container = styled.footer`
   }
   .linkColumn {
     > h3 {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       line-height: 16px;
       color: #ffffff;

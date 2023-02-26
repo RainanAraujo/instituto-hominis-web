@@ -17,7 +17,7 @@ export const Container = styled.header`
     flex: none;
     order: 1;
     flex-grow: 0;
-    font-size: 16px;
+    font-size: 1rem;
     > li {
       transition: all 0.2s;
       &:hover {
