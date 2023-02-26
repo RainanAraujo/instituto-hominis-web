@@ -1,5 +1,6 @@
 import { Container } from "@/styles/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeaderProps {
   color?: "primary" | "secondary";
@@ -27,9 +28,9 @@ export default function Header({ color = "primary" }: HeaderProps) {
               </a>
             </li>
             <li>
-              <a href="#" target="_self">
+              <Link href="/news" target="_self">
                 Notícias
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" target="_self">

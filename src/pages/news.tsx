@@ -1,8 +1,50 @@
 import Head from "next/head";
 import { Container, Noticia } from "@/styles/pages/News";
 import Header from "@/components/Header";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
+import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
-export default function News() {
+interface Post {
+  title: any;
+  content: { text: string | null; image: string; body: any };
+}
+export default function News({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [posts, setPosts] = useState<Post[]>([]);
+  function getThreePosts() {
+    const array = [];
+    for (let i = 0; i < 3; i++) {
+      if (data.items == undefined || i >= data.items.length) {
+        return array;
+      }
+      array.push({
+        title: data.items[i].title,
+        content: {
+          body: data.items[i].content,
+          text: new DOMParser().parseFromString(
+            data.items[i].content,
+            "text/html"
+          ).body.textContent,
+          image:
+            new DOMParser()
+              .parseFromString(data.items[i].content, "text/html")
+              .body.querySelector("img") != null
+              ? new DOMParser()
+                  .parseFromString(data.items[i].content, "text/html")
+                  .body.querySelector("img")!.src
+              : "",
+        },
+      });
+    }
+    return array;
+  }
+  useEffect(() => {
+    setPosts(getThreePosts());
+  }, []);
+  console.log(posts);
   return (
     <>
       <Head>
@@ -11,37 +53,42 @@ export default function News() {
       <Header color="secondary" />
       <Container>
         <div className="background"></div>
-        <Noticia>
-          <div className="titulo">
-            <h1>Título da postagem aqui teste para título</h1>
-            <p>05 JAN</p>
-          </div>
-          <div className="imagem">
-            <div className="img"></div>
-            <p>Por Instituto Hominis</p>
-          </div>
-          <div className="descricao">
-            <p>
-              But I must explain to you how all this mistaken idea of denouncing
-              pleasure and praising pain was born and I will give you a complete
-              account of the system, and expound the actual teachings of the
-              great explorer of the truth, the master-builder of human
-              happiness. No one rejects, dislikes, or avoids pleasure itself,
-              because it is pleasure, but because those who do not know how to
-              pursue pleasure rationally encounter Consequences that are
-              extremely painful. Nor again is there anyone who loves or pursues
-              or desires to obtain pain of itself, because it is pain, but
-              because occasionally circumstances occur in which toil and pain
-              can procure him some great pleasure. To take a trivial example,
-              which of us ever undertakes laborious physical exercise, except to
-              obtain some advantage from it? But who has any right to find fault
-              with a man who chooses to enjoy a pleasure that has no annoying
-              consequences, or one who avoids a pain that produces no resultant
-              pleasure?
-            </p>
-          </div>
-        </Noticia>
+        {posts.map((post, index) => {
+          return (
+            <Noticia key={index}>
+              <div className="titulo">
+                <h1>{post.title}</h1>
+                <p>05 JAN</p>
+              </div>
+              <div className="imagem">
+                <img src={post.content.image} alt="" />
+              </div>
+              <div
+                className="descricao"
+                dangerouslySetInnerHTML={{
+                  __html: post.content.text!,
+                }}
+              ></div>
+            </Noticia>
+          );
+        })}
       </Container>
+      <Footer />
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<{ data: any }> = async (
+  context
+) => {
+  const res = await fetch(
+    "https://www.googleapis.com/blogger/v3/blogs/1662176285574311515/posts?key=AIzaSyAGPORScP6q_KFAsOiLVR_0t6_rNCVBZok"
+  );
+  const data: any = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};

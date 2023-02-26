@@ -6,16 +6,18 @@ export const Container = styled.main`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   .background {
     width: 100%;
     height: 460px;
     background-color: ${(props) => props.theme.colors.gray900};
   }
+  & > div:nth-child(2) {
+    margin-top: -420px;
+  }
 `;
 
-export const Noticia = styled.section`
+export const Noticia = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,19 +27,16 @@ export const Noticia = styled.section`
   padding: 48px 80px;
   width: 100%;
   max-width: 900px;
-  margin-top: -420px;
 
   .imagem {
     display: flex;
     flex-direction: column;
     gap: 14px;
     width: 100%;
-    .img {
+    img {
       width: 100%;
       height: 387px;
-      background-color: ${(props) => props.theme.colors.gray600};
     }
-
     p {
       font-weight: 400;
       font-size: 16px;
@@ -57,7 +56,6 @@ export const Noticia = styled.section`
       color: ${(props) => props.theme.colors.gray600};
     }
     h1 {
-      width: 80%;
       font-weight: 800;
       font-size: 42px;
       line-height: 3rem;
