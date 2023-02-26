@@ -1,9 +1,13 @@
 import { Container } from "@/styles/components/Header";
 import Image from "next/image";
 import Link from "next/link";
-export default function Header() {
+
+interface HeaderProps {
+  color?: "primary" | "secondary";
+}
+export default function Header({ color = "primary" }: HeaderProps) {
     return (
-        <Container>
+        <Container color={color}>
             <div className="content" id="header">
                 <Image
                     src="/images/Layer_x0020_1.svg"
@@ -24,9 +28,9 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" target="_self">
-                                Notícias
-                            </Link>
+                            <Link href="/news" target="_self">
+                Notícias
+              </Link>
                         </li>
                         <li>
                             <Link href="#" target="_self">

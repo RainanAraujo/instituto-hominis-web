@@ -27,13 +27,14 @@ import {
 } from "phosphor-react";
 
 export default function Home() {
+
     return (
         <>
             <Head>
                 <title>Instituto Hominis</title>
             </Head>
             <Container>
-                <Header />
+                <Header color="primary" />
                 <Presentation>
                     <div className="content">
                         <div className="containerTitle ">
@@ -118,6 +119,7 @@ export default function Home() {
                             ambiental.
                         </p>
                     </div>
+
 
                     <div className="card ">
                         <div className="bg-eye">
