@@ -1,3 +1,4 @@
+import ButtonToTop from "@/components/ButtonToTop";
 import { Container } from "@/styles/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,6 +62,7 @@ export default function Footer() {
                             </Link>
                         </div>
                     </div>
+                    <ButtonToTop />
                 </div>
                 <p>© 2023 INSTITUTO HOMINIS | Todos os Direitos Reservados</p>
             </div>
