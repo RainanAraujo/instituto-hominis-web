@@ -61,6 +61,7 @@ export const Container = styled.main`
 
                 color: ${(props) => props.theme.colors.gray600};
                 text-align: center;
+                cursor: pointer;
             }
         }
     }

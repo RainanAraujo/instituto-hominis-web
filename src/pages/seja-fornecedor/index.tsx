@@ -2,10 +2,14 @@ import { Container } from "@/styles/pages/Fornecedor";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
+import Head from "next/head";
 
 export default function sejaFornecedor() {
     return (
         <>
+            <Head>
+                <title>fornecedor</title>
+            </Head>
             <Header />
             <Container>
                 <div className="header">

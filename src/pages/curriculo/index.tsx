@@ -19,7 +19,17 @@ export default function Curriculo() {
                         rejects, dislikes, or avoids pleasure itself.
                     </p>
                 </div>
-                <form action="" method="post">
+                <form
+                    action="https://formsubmit.co/jadson.hudson78@gmail.com"
+                    method="POST"
+                    encType="multipart/form-data"
+                >
+                    <input type="hidden" name="_subject" value="Currículo" />
+                    <input
+                        type="hidden"
+                        name="_autoresponse"
+                        value="Agradecemos pela submissão"
+                    ></input>
                     <div className="campo">
                         <label htmlFor="inome">Nome *</label>
                         <input
@@ -44,10 +54,13 @@ export default function Curriculo() {
                     </div>
                     <div className="campo">
                         <p>Seu currículo *</p>
-                        <label htmlFor="icurrículo" id="arquivo">Clique para anexar o currículo</label>
+                        <label htmlFor="icurrículo" id="arquivo">
+                            Clique para anexar o currículo
+                        </label>
                         <input
                             type="file"
-                            name="currículo"
+                            name="attachment"
+                            accept="image/png, image/jpeg"
                             id="icurrículo"
                             required
                         />
