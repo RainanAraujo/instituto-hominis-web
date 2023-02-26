@@ -11,6 +11,7 @@ import {
 import Header from "@/components/Header";
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
+
 import Image from "next/image";
 import {
     Heartbeat,

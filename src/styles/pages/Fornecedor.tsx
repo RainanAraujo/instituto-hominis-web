@@ -4,9 +4,9 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 1280px;
-    min-height: vh;
+    width: 100%;
+    max-width: 900px;
+    min-height: 70vh;
     margin: 0 auto;
     padding: 0 80px 40px;
 
@@ -59,7 +59,7 @@ export const Container = styled.main`
                 border-radius: 4px;
                 padding: 1rem;
 
-                color: ${(props) => props.theme.colors.gray600};
+                color: ${(props) => props.theme.colors.gray800};
                 text-align: center;
             }
         }

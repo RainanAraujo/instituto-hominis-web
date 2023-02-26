@@ -4,8 +4,8 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 1280px;
+    width: 100%;
+    max-width: 900px;
     min-height: 80vh;
     margin: 0 auto;
     padding: 0 80px 40px;

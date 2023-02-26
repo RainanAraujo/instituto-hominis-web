@@ -1,3 +1,4 @@
+import ButtonToTop from "@/components/ButtonToTop";
 import { Container } from "@/styles/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,12 +33,10 @@ export default function Footer() {
                     <div className="linkColumn">
                         <h3>Contate-nos</h3>
                         <div className="linkGroup">
-                            <Link href="#" target="__blank">
+                            <Link href="#">
                                 E-mail: faleconosco@institutohominis.org.br
                             </Link>
-                            <Link href="#" target="__blank">
-                                Telefone: (98) 98536-7570
-                            </Link>
+                            <Link href="#">Telefone: (98) 98536-7570</Link>
                         </div>
                     </div>
                     <div className="linkColumn">
@@ -61,6 +60,7 @@ export default function Footer() {
                             </Link>
                         </div>
                     </div>
+                    <ButtonToTop />
                 </div>
                 <p>© 2023 INSTITUTO HOMINIS | Todos os Direitos Reservados</p>
             </div>
