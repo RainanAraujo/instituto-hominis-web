@@ -9,7 +9,11 @@ export default createGlobalStyle`
         font-family: 'Inter', sans-serif;
         list-style-type: none;
         text-decoration: none;
-                
+    }
+    :focus {
+        outline: 1px solid ${(props) => theme.colors.blue300};
+        
+        
     }
 `;
 
