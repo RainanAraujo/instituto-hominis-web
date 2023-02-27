@@ -10,6 +10,9 @@ export default createGlobalStyle`
         list-style-type: none;
         text-decoration: none;
     }
+    html {
+        scroll-behavior: smooth;
+    }
     :focus {
         outline: 1px solid ${(props) => theme.colors.blue300};
         
