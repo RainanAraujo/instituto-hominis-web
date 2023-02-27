@@ -21,10 +21,11 @@ import {
     SketchLogo,
     Target,
     UsersThree,
-    Handshake,
+    CurrencyCircleDollar,
     Phone,
     ArrowRight,
 } from "phosphor-react";
+import ButtonToTop from "@/components/ButtonToTop";
 
 export default function Home() {
 
@@ -157,7 +158,7 @@ export default function Home() {
                 </Objetivos>
                 <Propostas>
                     <div className="titulo">
-                        <h1>A solução para texto texto</h1>
+                        <h1>A qualidade é o caminho</h1>
                         <a href="#">
                             <Button>
                                 <ArrowRight size={24} color="white" />
@@ -169,24 +170,21 @@ export default function Home() {
                         <div className="icon">
                             <UsersThree size={46} />
                         </div>
-                        <h2>Vantagem 1</h2>
+                        <h2>Gestão Tecnológica</h2>
                         <p>
-                            llamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur
+                            Gestão orientada por dados com o uso de tecnologias
+                            inovadoras, desenvolvimento de pesquisa e projetos
+                            voltados para a saúde pública.
                         </p>
                     </div>
                     <div className="card">
                         <div className="icon">
-                            <Handshake size={46} />
+                            <CurrencyCircleDollar size={46} />
                         </div>
-                        <h2>Vantagem 2</h2>
+                        <h2>Economia</h2>
                         <p>
-                            llamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur
+                            Redução de custos e potencialização de resultados
+                            para a administração pública.
                         </p>
                     </div>
                 </Propostas>
@@ -276,6 +274,7 @@ export default function Home() {
                     </div>
                 </Blog>
                 <Footer />
+                <ButtonToTop />
             </Container>
         </>
     );
