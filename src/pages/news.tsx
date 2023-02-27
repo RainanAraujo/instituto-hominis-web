@@ -48,7 +48,7 @@ export default function News({
   return (
     <>
       <Head>
-        <title>News</title>
+        <title>Notícias</title>
       </Head>
       <Header color="secondary" />
       <Container>
