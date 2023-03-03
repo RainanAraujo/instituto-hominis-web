@@ -239,12 +239,15 @@ export const Objetivos = styled.section`
 
 export const Vantagens = styled.section`
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 56px 0px 62px 0px;
   .contentVantagens {
     display: flex;
     align-items: center;
-    gap: 2rem;
     width: 100%;
+    max-width: 1280px;
     height: 290px;
     overflow-x: scroll;
     cursor: grab;
@@ -257,6 +260,7 @@ export const Vantagens = styled.section`
     }
     .cardVantagens {
       height: 100%;
+      margin-left: 12px;
       min-width: 300px;
       -webkit-user-select: none;
       -moz-user-select: none;

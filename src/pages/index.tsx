@@ -36,6 +36,8 @@ import React, { useRef, useState } from "react";
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
 import { useEffect } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 interface Post {
   title: any;
@@ -45,30 +47,6 @@ interface Post {
 export default function Home({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const boxRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startPosition, setStartPosition] = useState(0);
-  const [startScrollPosition, setStartScrollPosition] = useState(0);
-  const [open, setOpen] = React.useState(false);
-  const [isOpenMoreValues, setIsOpenMoreValues] = useState(false);
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    setIsDragging(true);
-    setStartPosition(e.clientX);
-    setStartScrollPosition(boxRef.current?.scrollLeft || 0);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (isDragging) {
-      const distance = e.clientX - startPosition;
-      if (boxRef.current) {
-        boxRef.current.scrollLeft = startScrollPosition - distance;
-      }
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
   const [posts, setPosts] = useState<Post[]>([]);
 
   function getThreePosts() {
@@ -98,6 +76,23 @@ export default function Home({
     }
     return array;
   }
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
   useEffect(() => {
     setPosts(getThreePosts());
   }, []);
@@ -166,71 +161,75 @@ export default function Home({
             <div className="imageConcept"></div>
           </div>
         </KeyWord>
+
         <Vantagens>
-          <div
-            className="contentVantagens box"
-            ref={boxRef}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-          >
-            <div className="cardVantagens">
-              <UsersThree size={46} />
-              <h2>Gestão Tecnologica</h2>
-              <p>
-                Gestão com o uso de tecnologias inovadoras, desenvolvimento de
-                pesquisa e projetos voltados para a saúde pública.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <CurrencyCircleDollar size={46} />
-              <h2>Economia</h2>
-              <p>
-                Redução de custos e potencialização de resultados para a
-                administração pública.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <TrendUp size={46} />
-              <h2>Eficiência</h2>
-              <p>
-                Otimizamos os resultados através de uma busca contínua por uma
-                gestão de excelência.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <Handshake size={46} />
-              <h2>Qualidade de Atendimento</h2>
-              <p>
-                Garantimos atendimento humanizado, universalizado, e de
-                qualidade para o bem estar dos pacientes.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <Receipt size={46} />
-              <h2>Desburocratização</h2>
-              <p>
-                Dinamização e simplificação dos processos administrativos,
-                possibilitando maior agilidade, economia e eficiência para a
-                administração pública.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <UserGear size={46} />
-              <h2>Gestão de profissionais</h2>
-              <p>
-                Administrar equipes multidisciplinares de saúde eficientemente,
-                reduzindo custos por meio da organização.
-              </p>
-            </div>
-            <div className="cardVantagens">
-              <Stack size={46} />
-              <h2>Prestação de contas e compliance</h2>
-              <p>
-                Gerenciar recursos públicos com transparência e ética,
-                garantindo a autonomia e economia das unidades administradas.
-              </p>
-            </div>
+          <div className="contentVantagens">
+            <Carousel
+              responsive={responsive}
+              ssr={true}
+              keyBoardControl={true}
+              containerClass="carousel-container"
+              deviceType="desktop"
+              autoPlay={true}
+            >
+              <div className="cardVantagens">
+                <UsersThree size={46} />
+                <h2>Gestão Tecnologica</h2>
+                <p>
+                  Gestão com o uso de tecnologias inovadoras, desenvolvimento de
+                  pesquisa e projetos voltados para a saúde pública.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <CurrencyCircleDollar size={46} />
+                <h2>Economia</h2>
+                <p>
+                  Redução de custos e potencialização de resultados para a
+                  administração pública.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <TrendUp size={46} />
+                <h2>Eficiência</h2>
+                <p>
+                  Otimizamos os resultados através de uma busca contínua por uma
+                  gestão de excelência.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <Handshake size={46} />
+                <h2>Qualidade de Atendimento</h2>
+                <p>
+                  Garantimos atendimento humanizado, universalizado, e de
+                  qualidade para o bem estar dos pacientes.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <Receipt size={46} />
+                <h2>Desburocratização</h2>
+                <p>
+                  Dinamização e simplificação dos processos administrativos,
+                  possibilitando maior agilidade, economia e eficiência para a
+                  administração pública.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <UserGear size={46} />
+                <h2>Gestão de profissionais</h2>
+                <p>
+                  Administrar equipes multidisciplinares de saúde
+                  eficientemente, reduzindo custos por meio da organização.
+                </p>
+              </div>
+              <div className="cardVantagens">
+                <Stack size={46} />
+                <h2>Prestação de contas e compliance</h2>
+                <p>
+                  Gerenciar recursos públicos com transparência e ética,
+                  garantindo a autonomia e economia das unidades administradas.
+                </p>
+              </div>
+            </Carousel>
           </div>
         </Vantagens>
         <Objetivos>
