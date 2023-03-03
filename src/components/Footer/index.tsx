@@ -13,9 +13,9 @@ export default function Footer(
       <div className="content">
         <div className="wrapperFooter">
           <Image
-            src="/images/Layer_x0020_1.svg"
-            width={81}
-            height={58}
+            src="/images/logovertical.svg"
+            width={120}
+            height={86}
             alt="Logo do Instituto Hominis"
           />
           <div className="linkColumn">

@@ -9,12 +9,22 @@ export default function Header({ color = "primary" }: HeaderProps) {
   return (
     <Container color={color}>
       <div className="content" id="header">
-        <Image
-          src="/images/Layer_x0020_1.svg"
-          width={81}
-          height={58}
-          alt="Logo do Instituto Hominis"
-        />
+        {color === "primary" ? (
+          <Image
+            src="/images/Layer_x0020_1.svg"
+            width={120}
+            height={58}
+            alt="Logo do Instituto Hominis"
+          />
+        ) : (
+          <Image
+            src="/images/logodark.svg"
+            width={120}
+            height={58}
+            alt="Logo do Instituto Hominis"
+          />
+        )}
+
         <menu>
           <ul>
             <li>

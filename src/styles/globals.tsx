@@ -18,10 +18,14 @@ export default createGlobalStyle`
         
         
     }
-    a, a:visited, a:hover, a:active {
+    a, a:visited, a:hover, a:active, a:focus {
      color: inherit;
+     outline: none;
+     border: 0;
+      text-decoration: none;
+
     }
-    button:focus {
+    button:focus{
     outline: none;
 }
 `;
