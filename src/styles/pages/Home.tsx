@@ -108,7 +108,7 @@ export const KeyWord = styled.section`
       h1 {
         font-weight: 600;
         font-size: 2.5rem;
-        line-height: 2.75rem;
+        line-height: 2.5rem;
         color: #092a3d;
         margin-bottom: 16px;
       }
@@ -117,7 +117,7 @@ export const KeyWord = styled.section`
         font-size: 1rem;
         text-align: justify;
         margin-bottom: 2rem;
-        line-height: 2rem;
+        line-height: 1.7rem;
       }
 
       .groupWordsCards {

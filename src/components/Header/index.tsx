@@ -13,7 +13,7 @@ export default function Header({ color = "primary" }: HeaderProps) {
           <Image
             src="/images/Layer_x0020_1.svg"
             width={120}
-            height={58}
+            height={40}
             alt="Logo do Instituto Hominis"
           />
         ) : (
@@ -33,7 +33,7 @@ export default function Header({ color = "primary" }: HeaderProps) {
               </Link>
             </li>
             <li>
-              <Link href="#about" target="_self">
+              <Link href="/aboutUs" target="_self">
                 Quem somos
               </Link>
             </li>
@@ -43,7 +43,7 @@ export default function Header({ color = "primary" }: HeaderProps) {
               </Link>
             </li>
             <li>
-              <Link href="#footer" target="_self">
+              <Link href="https://linktr.ee/institutohominis" target="_blank">
                 Contato
               </Link>
             </li>
