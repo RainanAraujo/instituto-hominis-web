@@ -4,6 +4,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+
+  images: {
+    domains: ["blogger.googleusercontent.com"],
+  },
 };
 
 module.exports = nextConfig;

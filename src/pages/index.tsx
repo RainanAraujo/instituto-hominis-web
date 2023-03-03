@@ -27,8 +27,50 @@ import {
 } from "phosphor-react";
 import ButtonToTop from "@/components/ButtonToTop";
 import Link from "next/link";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+interface Post {
+  title: any;
+  content: { text: string | null; image: string; body: any };
+}
+
+export default function Home({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  function getThreePosts() {
+    const array = [];
+    for (let i = 0; i < 3; i++) {
+      if (data.items == undefined || i >= data.items.length) {
+        return array;
+      }
+      array.push({
+        title: data.items[i].title,
+        content: {
+          body: data.items[i].content,
+          text: new DOMParser().parseFromString(
+            data.items[i].content,
+            "text/html"
+          ).body.textContent,
+          image:
+            new DOMParser()
+              .parseFromString(data.items[i].content, "text/html")
+              .body.querySelector("img") != null
+              ? new DOMParser()
+                  .parseFromString(data.items[i].content, "text/html")
+                  .body.querySelector("img")!.src
+              : "",
+        },
+      });
+    }
+    return array;
+  }
+  useEffect(() => {
+    setPosts(getThreePosts());
+  }, []);
   return (
     <>
       <Head>
@@ -186,76 +228,97 @@ export default function Home() {
           </div>
         </HeaderBlog>
 
-        <Blog>
-          <div className="principal">
-            <figure className="imgPrincipal">
-              <Image
-                src="/images/Layer_x0020_1.svg"
-                width={40}
-                height={40}
-                alt="Imagem"
-              />
-            </figure>
-            <div className="texto">
-              <h2>The standard Lorem Ipsum passage, used since...</h2>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, tota...
-              </p>
-              <a href="#">Ver mais</a>
+        {posts.length > 0 && (
+          <Blog>
+            <div className="principal">
+              <figure className="imgPrincipal">
+                <Image
+                  src={posts[0].content.image}
+                  alt="imagem"
+                  width={200}
+                  height={300}
+                />
+              </figure>
+              <div className="texto">
+                <h2>{posts[0].title}</h2>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: posts[0].content.text!,
+                  }}
+                ></p>
+                <a href="#">Ver mais</a>
+              </div>
             </div>
-          </div>
 
-          <div className="feed">
-            <div className="card">
-              <figure className="miniatura">
-                <Image
-                  src="/images/Layer_x0020_1.svg"
-                  width={40}
-                  height={40}
-                  alt="Imagem"
-                />
-              </figure>
-              <div className="texto">
-                <div className="titulo">
-                  <h2>The standard Lorem Ipsum passage,...</h2>
+            <div className="feed">
+              <div className="card">
+                <figure className="miniatura">
+                  <Image
+                    src={posts[1].content.image}
+                    alt="imagem"
+                    width={200}
+                    height={150}
+                  />
+                </figure>
+                <div className="texto">
+                  <div className="titulo">
+                    <h2>{posts[1].title}</h2>
+                  </div>
+                  <div className="descricao">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: posts[1].content.text!,
+                      }}
+                    ></p>
+                  </div>
+                  <a href="#">Ver mais</a>
                 </div>
-                <div className="descricao">
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, tota...
-                  </p>
+              </div>
+              <div className="card">
+                <figure className="miniatura">
+                  <Image
+                    src={posts[2].content.image}
+                    alt="imagem"
+                    width={200}
+                    height={150}
+                  />
+                </figure>
+                <div className="texto">
+                  <div className="titulo">
+                    <h2>{posts[2].title}</h2>
+                  </div>
+                  <div className="descricao">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: posts[2].content.text!,
+                      }}
+                    ></p>
+                  </div>
+                  <a href="#">Ver mais</a>
                 </div>
-                <a href="#">Ver mais</a>
               </div>
             </div>
-            <div className="card">
-              <figure className="miniatura">
-                <Image
-                  src="/images/Layer_x0020_1.svg"
-                  width={40}
-                  height={40}
-                  alt="Imagem"
-                />
-              </figure>
-              <div className="texto">
-                <div className="titulo">
-                  <h2>The standard Lorem Ipsum passage,...</h2>
-                </div>
-                <div className="descricao">
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, tota...
-                  </p>
-                </div>
-                <a href="#">Ver mais</a>
-              </div>
-            </div>
-          </div>
-        </Blog>
+          </Blog>
+        )}
+
         <Footer id="footer" />
         <ButtonToTop />
       </Container>
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<{ data: any }> = async (
+  context
+) => {
+  const res = await fetch(
+    "https://www.googleapis.com/blogger/v3/blogs/1662176285574311515/posts?key=AIzaSyAGPORScP6q_KFAsOiLVR_0t6_rNCVBZok"
+  );
+  const data: any = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};

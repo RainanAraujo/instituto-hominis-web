@@ -14,6 +14,7 @@ export default function News({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [posts, setPosts] = useState<Post[]>([]);
+
   function getThreePosts() {
     const array = [];
     for (let i = 0; i < 3; i++) {
@@ -44,7 +45,7 @@ export default function News({
   useEffect(() => {
     setPosts(getThreePosts());
   }, []);
-  console.log(posts);
+
   return (
     <>
       <Head>
