@@ -171,6 +171,9 @@ export default function Home({
               containerClass="carousel-container"
               deviceType="desktop"
               autoPlay={true}
+              autoPlaySpeed={3000}
+              infinite={true}
+              removeArrowOnDeviceType={["desktop", "mobile"]}
             >
               <div className="cardVantagens">
                 <UsersThree size={46} />
