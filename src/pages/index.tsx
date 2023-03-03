@@ -11,8 +11,9 @@ import {
 import Header from "@/components/Header";
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
-
+import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
+
 import {
   Heartbeat,
   HandFist,
@@ -28,12 +29,14 @@ import {
   Receipt,
   UserGear,
   Stack,
+  X,
 } from "phosphor-react";
 import ButtonToTop from "@/components/ButtonToTop";
 import React, { useRef, useState } from "react";
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
 import { useEffect } from "react";
+
 interface Post {
   title: any;
   content: { text: string | null; image: string; body: any };
@@ -47,6 +50,7 @@ export default function Home({
   const [startPosition, setStartPosition] = useState(0);
   const [startScrollPosition, setStartScrollPosition] = useState(0);
   const [open, setOpen] = React.useState(false);
+  const [isOpenMoreValues, setIsOpenMoreValues] = useState(false);
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setIsDragging(true);
     setStartPosition(e.clientX);
@@ -121,11 +125,11 @@ export default function Home({
                     height={32}
                     weight="regular"
                   />
-                  <strong>Saúde</strong>
+                  <span>Saúde</span>
                 </div>
                 <div className="wordCard">
                   <HandFist size={32} width={32} height={32} weight="regular" />
-                  <strong>Assis. social</strong>
+                  <span>Assis. social</span>
                 </div>
                 <div className="wordCard">
                   <LightbulbFilament
@@ -134,7 +138,7 @@ export default function Home({
                     height={32}
                     weight="regular"
                   />
-                  <strong>Educação</strong>
+                  <span>Educação</span>
                 </div>
               </div>
             </div>
@@ -260,7 +264,7 @@ export default function Home({
             </p>
           </div>
 
-          <div className="card ">
+          <div className="card">
             <div className="bg-diamond">
               <div className="icon">
                 <SketchLogo size={42.6} color="white" />
@@ -268,7 +272,7 @@ export default function Home({
             </div>
             <h2>Valores</h2>
 
-            <ol>
+            <ul>
               <li> Valorização e respeito à vida</li>
               <li>Equidade em saúde </li>
               <li> Valorização e proteção</li>
@@ -277,8 +281,49 @@ export default function Home({
                 culturais
               </li>
               <li>Responsabilidade, equidade e inclusão social</li>
-            </ol>
-            <button>Ler mais</button>
+            </ul>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <button>Ler mais</button>
+              </Dialog.Trigger>
+              <Dialog.Portal>
+                <Dialog.Overlay className="DialogOverlay" />
+                <Dialog.Content className="DialogContent">
+                  <Dialog.Title className="DialogTitle">Valores</Dialog.Title>
+
+                  <ul>
+                    <li>Valorização e respeito à vida</li>
+                    <li>Ética e transparência</li>
+                    <li>Equidade em saúde</li>
+                    <li>
+                      Valorização e proteção de recursos humanos, ambientais e
+                      culturais
+                    </li>
+                    <li>Responsabilidade, equidade e inclusão social</li>
+                    <li>
+                      Respeito a diversidade humana, cultural, ambiental e
+                      econômica
+                    </li>
+                    <li>
+                      Compromisso com a efetiva melhoria nas condições de saúde
+                      da população
+                    </li>
+                    <li>Inovação, criatividade e proatividade</li>
+                    <li>Gestão com excelência e foco nos resultados</li>
+                    <li>
+                      Acolhimento humanizado e digno a pacientes e acompanhantes
+                    </li>
+                    <li>Reconhecimento e valorização profissional</li>
+                    <li>Educação como instrumento de transformação</li>
+                  </ul>
+                  <Dialog.Close asChild>
+                    <button className="IconButton">
+                      <X size={24} />
+                    </button>
+                  </Dialog.Close>
+                </Dialog.Content>
+              </Dialog.Portal>
+            </Dialog.Root>
           </div>
         </Objetivos>
         <HeaderBlog>

@@ -18,10 +18,15 @@ export default createGlobalStyle`
         
         
     }
+    a, a:visited, a:hover, a:active {
+     color: inherit;
+    }
+    button:focus {
+    outline: none;
+}
 `;
 
 export const theme = {
-
   colors: {
     black: "#092A3D",
     blue300: "#215D7F",
@@ -33,5 +38,4 @@ export const theme = {
     gray900: "#F1F1F1",
     white: "#FFFFFF",
   },
-
 };
