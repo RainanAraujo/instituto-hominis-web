@@ -4,7 +4,7 @@ import {
   Presentation,
   KeyWord,
   Objetivos,
-  Propostas,
+  Vantagens,
   Blog,
   HeaderBlog,
 } from "@/styles/pages/Home";
@@ -23,14 +23,17 @@ import {
   UsersThree,
   CurrencyCircleDollar,
   Phone,
-  ArrowRight,
+  TrendUp,
+  Handshake,
+  Receipt,
+  UserGear,
+  Stack,
 } from "phosphor-react";
 import ButtonToTop from "@/components/ButtonToTop";
-import Link from "next/link";
+import React, { useRef, useState } from "react";
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react";
 interface Post {
   title: any;
   content: { text: string | null; image: string; body: any };
@@ -39,6 +42,29 @@ interface Post {
 export default function Home({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState(0);
+  const [startScrollPosition, setStartScrollPosition] = useState(0);
+  const [open, setOpen] = React.useState(false);
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    setIsDragging(true);
+    setStartPosition(e.clientX);
+    setStartScrollPosition(boxRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (isDragging) {
+      const distance = e.clientX - startPosition;
+      if (boxRef.current) {
+        boxRef.current.scrollLeft = startScrollPosition - distance;
+      }
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
   const [posts, setPosts] = useState<Post[]>([]);
 
   function getThreePosts() {
@@ -71,6 +97,7 @@ export default function Home({
   useEffect(() => {
     setPosts(getThreePosts());
   }, []);
+
   return (
     <>
       <Head>
@@ -81,34 +108,10 @@ export default function Home({
         <Presentation>
           <div className="content">
             <div className="containerTitle ">
-              <h1>O Instituto para a sua vida</h1>
+              <h1>Instituto Hominis</h1>
               <p>
-                Através de uma equipe multidisciplinar e especialista focada em
-                atendimento humanizado com prestação de serviços de qualidade.
-              </p>
-              <a href="#footer">
-                <Button>
-                  <Phone size={18} weight="bold" />
-                  Entre em contato
-                </Button>
-              </a>
-            </div>
-            <div className="containerImages">
-              <div className="largerImage">
-                <div className="smallerImage"></div>
-              </div>
-            </div>
-          </div>
-        </Presentation>
-        <KeyWord>
-          <div className="contentKeyWords limitWidth" id="about">
-            <div className="wordKeyConceptions">
-              <h1>Gestão de pessoas, serviços, hospitais e equipamentos</h1>
-              <p className="paragraph">
-                Somos uma entidade sem fins lucrativos, fundada em 29 de outubro
-                de 1974, que atua hoje na gestão compartilhada de saúde em
-                conjunto ao Poder Público, nas esferas municipais, estaduais e
-                federais.
+                Transformando vidas e construindo um futuro mais humanizado -
+                Bem vindo ao Instituto Hominis
               </p>
               <div className="groupWordsCards">
                 <div className="wordCard">
@@ -122,7 +125,7 @@ export default function Home({
                 </div>
                 <div className="wordCard">
                   <HandFist size={32} width={32} height={32} weight="regular" />
-                  <strong>Assitência social</strong>
+                  <strong>Assis. social</strong>
                 </div>
                 <div className="wordCard">
                   <LightbulbFilament
@@ -135,9 +138,97 @@ export default function Home({
                 </div>
               </div>
             </div>
+            <div className="containerImages">
+              <div className="largerImage">
+                <div className="smallerImage"></div>
+              </div>
+            </div>
+          </div>
+        </Presentation>
+        <KeyWord>
+          <div className="contentKeyWords limitWidth" id="about">
+            <div className="wordKeyConceptions">
+              <h1>
+                Gestão de pessoas, serviços, hospitais e equipamentos de saúde
+              </h1>
+              <p className="paragraph">
+                Disponibilizamos ao setor público modelos eficientes de gestão
+                de saúde, com práticas inovadoras e excelência. Nossa equipe
+                multidisciplinar e especializada oferece atendimento humanizado
+                e serviços de qualidade, gerando resultados expressivos para a
+                sociedade.
+              </p>
+            </div>
             <div className="imageConcept"></div>
           </div>
         </KeyWord>
+        <Vantagens>
+          <div
+            className="contentVantagens box"
+            ref={boxRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+          >
+            <div className="cardVantagens">
+              <UsersThree size={46} />
+              <h2>Gestão Tecnologica</h2>
+              <p>
+                Gestão com o uso de tecnologias inovadoras, desenvolvimento de
+                pesquisa e projetos voltados para a saúde pública.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <CurrencyCircleDollar size={46} />
+              <h2>Economia</h2>
+              <p>
+                Redução de custos e potencialização de resultados para a
+                administração pública.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <TrendUp size={46} />
+              <h2>Eficiência</h2>
+              <p>
+                Otimizamos os resultados através de uma busca contínua por uma
+                gestão de excelência.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <Handshake size={46} />
+              <h2>Qualidade de Atendimento</h2>
+              <p>
+                Garantimos atendimento humanizado, universalizado, e de
+                qualidade para o bem estar dos pacientes.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <Receipt size={46} />
+              <h2>Desburocratização</h2>
+              <p>
+                Dinamização e simplificação dos processos administrativos,
+                possibilitando maior agilidade, economia e eficiência para a
+                administração pública.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <UserGear size={46} />
+              <h2>Gestão de profissionais</h2>
+              <p>
+                Administrar equipes multidisciplinares de saúde eficientemente,
+                reduzindo custos por meio da organização.
+              </p>
+            </div>
+            <div className="cardVantagens">
+              <Stack size={46} />
+              <h2>Prestação de contas e compliance</h2>
+              <p>
+                Gerenciar recursos públicos com transparência e ética,
+                garantindo a autonomia e economia das unidades administradas.
+              </p>
+            </div>
+          </div>
+        </Vantagens>
         <Objetivos>
           <div className="card ">
             <div className="bg-target">
@@ -176,49 +267,20 @@ export default function Home({
               </div>
             </div>
             <h2>Valores</h2>
+
             <ol>
-              <li>Valorização</li>
-              <li>Respeito a vida </li>
+              <li> Valorização e respeito à vida</li>
+              <li>Equidade em saúde </li>
               <li> Valorização e proteção</li>
-              <li>Responsabilidade</li>
-              <li> Equidade </li>
-              <li>Compromisso</li>
-              <li>Transparência</li>
+              <li>
+                Valorização e proteção de recursos humanos, ambientais e
+                culturais
+              </li>
+              <li>Responsabilidade, equidade e inclusão social</li>
             </ol>
+            <button>Ler mais</button>
           </div>
         </Objetivos>
-        <Propostas>
-          <div className="titulo">
-            <h1>A qualidade é o caminho</h1>
-            <Link href="/seja-fornecedor">
-              <Button>
-                <ArrowRight size={24} color="white" />
-                Seja um fornecedor
-              </Button>
-            </Link>
-          </div>
-          <div className="card">
-            <div className="icon">
-              <UsersThree size={46} />
-            </div>
-            <h2>Tecnologia</h2>
-            <p>
-              Gestão orientada por dados com o uso de tecnologias inovadoras,
-              desenvolvimento de pesquisa e projetos voltados para a saúde
-              pública.
-            </p>
-          </div>
-          <div className="card">
-            <div className="icon">
-              <CurrencyCircleDollar size={46} />
-            </div>
-            <h2>Economia</h2>
-            <p>
-              Redução de custos e potencialização de resultados para a
-              administração pública.
-            </p>
-          </div>
-        </Propostas>
         <HeaderBlog>
           <div className="cabeçalho">
             <h1>Oferecemos o melhor para você</h1>
@@ -227,7 +289,6 @@ export default function Home({
             <Button outlined={true}>Ver todos os posts</Button>
           </div>
         </HeaderBlog>
-
         {posts.length > 0 && (
           <Blog>
             <div className="principal">
@@ -300,7 +361,6 @@ export default function Home({
             </div>
           </Blog>
         )}
-
         <Footer id="footer" />
         <ButtonToTop />
       </Container>
