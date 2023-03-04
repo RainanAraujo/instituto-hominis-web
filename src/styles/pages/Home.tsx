@@ -296,14 +296,15 @@ export const Vantagens = styled.section`
 
 export const Blog = styled.section`
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
+
   align-items: stretch;
   margin: 0 auto 64px;
   padding: 24px 80px;
   width: 100%;
   background-color: white;
   max-width: 1280px;
+  flex-wrap: wrap;
   .principal:hover {
     transform: scale(1.05);
   }
@@ -316,9 +317,10 @@ export const Blog = styled.section`
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 55%;
+    width: 50%;
     figure {
       img {
+        border-radius: 6px;
         width: 100%;
         height: auto;
         aspect-ratio: inherit;
@@ -366,16 +368,25 @@ export const Blog = styled.section`
   .feed {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
     gap: 24px;
+
     height: fit-content;
     .card {
+      display: flex;
+      align-items: flex-start;
       cursor: pointer;
       transition: all 0.7s;
     }
-    img {
-      width: 252px;
+    figure {
+      img {
+        border-radius: 6px;
+        width: 220px;
+        height: auto;
+        aspect-ratio: inherit;
+      }
     }
+
     h2 {
       font-weight: 500;
       font-size: 28px;
