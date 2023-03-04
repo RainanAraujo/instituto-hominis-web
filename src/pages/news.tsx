@@ -5,6 +5,7 @@ import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 interface Post {
   title: any;
@@ -62,7 +63,12 @@ export default function News({
                 <p>05 JAN</p>
               </div>
               <div className="imagem">
-                <img src={post.content.image} alt="" />
+                <Image
+                  src={post.content.image}
+                  alt=""
+                  width={200}
+                  height={200}
+                />
               </div>
               <div
                 className="descricao"

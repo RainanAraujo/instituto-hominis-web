@@ -33,10 +33,13 @@ export const Noticia = styled.div`
     flex-direction: column;
     gap: 14px;
     width: 100%;
+
     img {
       width: 100%;
-      height: 387px;
+      height: auto;
+      aspect-ratio: inherit;
     }
+
     p {
       font-weight: 400;
       font-size: 16px;
