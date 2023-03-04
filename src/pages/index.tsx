@@ -38,6 +38,7 @@ import { InferGetServerSidePropsType } from "next";
 import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from "next/link";
 
 interface Post {
   title: any;
@@ -333,7 +334,9 @@ export default function Home({
             <h1>Oferecemos o melhor para você</h1>
           </div>
           <div className="botaoPost">
-            <Button outlined={true}>Ver todos os posts</Button>
+            <Link href={"/news"}>
+              <Button outlined={true}>Ver todos os posts</Button>
+            </Link>
           </div>
         </HeaderBlog>
         {posts.length > 0 && (

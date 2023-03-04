@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.main`
   background-color: ${(props) => props.theme.colors.white};
@@ -304,11 +304,26 @@ export const Blog = styled.section`
   width: 100%;
   background-color: white;
   max-width: 1280px;
+  .principal:hover {
+    transform: scale(1.05);
+  }
+  .feed .card:hover {
+    transform: scale(1.05);
+  }
   .principal {
+    transition: all 0.7s;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 55%;
+    figure {
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: inherit;
+      }
+    }
     h2 {
       font-weight: 500;
       font-size: 28px;
@@ -354,6 +369,10 @@ export const Blog = styled.section`
     width: 50%;
     gap: 24px;
     height: fit-content;
+    .card {
+      cursor: pointer;
+      transition: all 0.7s;
+    }
     img {
       width: 252px;
     }
