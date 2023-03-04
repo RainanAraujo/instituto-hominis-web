@@ -69,6 +69,7 @@ export default function News({
                   width={200}
                   height={200}
                 />
+                <p>Por Instituto Hominis</p>
               </div>
               <div
                 className="descricao"
