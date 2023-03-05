@@ -272,11 +272,16 @@ export const Vantagens = styled.section`
       justify-content: center;
       gap: 10px;
       padding: 1.375rem;
-
-      border-radius: 10px;
       text-align: center;
 
-      background-color: ${(props) => props.theme.colors.gray950};
+      background: linear-gradient(${(props) => props.theme.colors.blue500} 0 0)
+        no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.08em);
+      transition: 0.3s var(--t, 0s),
+        background-position 0.3s calc(0.3s - var(--t, 0s));
+
+      &:hover {
+        background-size: 100% 2%;
+      }
       > svg {
         color: ${(props) => props.theme.colors.black};
       }
