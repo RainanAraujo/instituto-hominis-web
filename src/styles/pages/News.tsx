@@ -67,8 +67,8 @@ export const Noticia = styled.div`
   }
 
   .descricao {
-    > p {
-      color: ${(props) => props.theme.colors.gray400};
-    }
+    font-size: 16px;
+    line-height: 1.85rem;
+    color: ${(props) => props.theme.colors.gray400};
   }
 `;

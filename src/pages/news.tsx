@@ -10,6 +10,7 @@ import Image from "next/image";
 interface Post {
   title: any;
   content: { text: string | null; image: string; body: any };
+  published: Date;
 }
 export default function News({
   data,
@@ -39,6 +40,7 @@ export default function News({
                   .body.querySelector("img")!.src
               : "",
         },
+        published: data.items[i].published,
       });
     }
     return array;
@@ -46,6 +48,26 @@ export default function News({
   useEffect(() => {
     setPosts(getThreePosts());
   }, []);
+  console.log(posts);
+
+  function getDate(published: Date) {
+    const date = new Date(published);
+    const month = [
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro",
+    ];
+    return `${date.getDate()} DE ${month[date.getMonth()].toUpperCase()}`;
+  }
 
   return (
     <>
@@ -60,7 +82,7 @@ export default function News({
             <Noticia key={index}>
               <div className="titulo">
                 <h1>{post.title}</h1>
-                <p>05 JAN</p>
+                <p>{getDate(post.published)}</p>
               </div>
               <div className="imagem">
                 <Image
