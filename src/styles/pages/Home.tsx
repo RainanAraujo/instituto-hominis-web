@@ -419,6 +419,7 @@ export const HeaderBlog = styled.section`
   gap: 24px;
   align-items: center;
   margin: 0 auto;
+  margin-top: 32px;
   padding: 24px 80px;
   width: 100%;
   max-width: 1280px;
