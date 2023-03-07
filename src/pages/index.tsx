@@ -33,7 +33,7 @@ import {
 } from "phosphor-react";
 import ButtonToTop from "@/components/ButtonToTop";
 import React, { useRef, useState } from "react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { InferGetServerSidePropsType } from "next";
 import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
@@ -42,6 +42,7 @@ import Link from "next/link";
 
 interface Post {
   title: any;
+  id: string;
   content: { text: string | null; image: string; body: any };
 }
 
@@ -58,6 +59,7 @@ export default function Home({
       }
       array.push({
         title: data.items[i].title,
+        id: data.items[i].id,
         content: {
           body: data.items[i].content,
           text: new DOMParser().parseFromString(
@@ -341,73 +343,98 @@ export default function Home({
         </HeaderBlog>
         {posts.length > 0 && (
           <Blog>
-            <div className="principal">
-              <figure className="imgPrincipal">
-                <Image
-                  src={posts[0].content.image}
-                  alt="imagem"
-                  width={200}
-                  height={300}
-                />
-              </figure>
-              <div className="texto">
-                <h2>{posts[0].title}</h2>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: posts[0].content.text!,
-                  }}
-                ></p>
-                <a href="#">Ver mais</a>
+            <Link
+              legacyBehavior
+              href={{
+                pathname: "/news",
+                query: { id: posts[0].id },
+              }}
+            >
+              <div className="principal">
+                <figure className="imgPrincipal">
+                  <Image
+                    src={posts[0].content.image}
+                    alt="imagem"
+                    width={200}
+                    height={300}
+                  />
+                </figure>
+                <div className="texto">
+                  <h2>{posts[0].title}</h2>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: posts[0].content.text!,
+                    }}
+                  ></p>
+                  <a href="#">Ver mais</a>
+                </div>
               </div>
-            </div>
+            </Link>
 
             <div className="feed">
-              <div className="card">
-                <figure className="miniatura">
-                  <Image
-                    src={posts[1].content.image}
-                    alt="imagem"
-                    width={200}
-                    height={150}
-                  />
-                </figure>
-                <div className="texto">
-                  <div className="titulo">
-                    <h2>{posts[1].title}</h2>
+              <Link
+                legacyBehavior
+                href={{
+                  pathname: "/news",
+                  query: { id: posts[1].id },
+                }}
+              >
+                <div className="card">
+                  <figure className="miniatura">
+                    <Image
+                      src={posts[1].content.image}
+                      alt="imagem"
+                      width={200}
+                      height={150}
+                    />
+                  </figure>
+                  <div className="texto">
+                    <div className="titulo">
+                      <h2>{posts[1].title}</h2>
+                    </div>
+                    <div className="descricao">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: posts[1].content.text!,
+                        }}
+                      ></p>
+                    </div>
+                    <a href="#">Ver mais</a>
                   </div>
-                  <div className="descricao">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: posts[1].content.text!,
-                      }}
-                    ></p>
-                  </div>
-                  <a href="#">Ver mais</a>
                 </div>
-              </div>
-              <div className="card">
-                <figure className="miniatura">
-                  <Image
-                    src={posts[2].content.image}
-                    alt="imagem"
-                    width={200}
-                    height={150}
-                  />
-                </figure>
-                <div className="texto">
-                  <div className="titulo">
-                    <h2>{posts[2].title}</h2>
+              </Link>
+              <Link
+                legacyBehavior
+                href={{
+                  pathname: "/news",
+                  query: { id: posts[2].id },
+                }}
+              >
+                <div className="card">
+                  <figure className="miniatura">
+                    <Image
+                      src={posts[2].content.image}
+                      alt="imagem"
+                      width={200}
+                      height={150}
+                    />
+                  </figure>
+                  <div className="texto">
+                    <div className="titulo">
+                      <h2>{posts[2].title}</h2>
+                    </div>
+                    <div className="descricao">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: posts[2].content.text!,
+                        }}
+                      ></p>
+                    </div>
+
+                    <a>Ver mais</a>
                   </div>
-                  <div className="descricao">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: posts[2].content.text!,
-                      }}
-                    ></p>
-                  </div>
-                  <a href="#">Ver mais</a>
                 </div>
-              </div>
+              </Link>
             </div>
           </Blog>
         )}
