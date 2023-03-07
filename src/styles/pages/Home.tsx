@@ -258,8 +258,9 @@ export const Vantagens = styled.section`
     &::-webkit-scrollbar {
       display: none;
     }
+
     .cardVantagens {
-      height: 100%;
+      height: 290px;
       margin-left: 12px;
       min-width: 300px;
       -webkit-user-select: none;
