@@ -166,12 +166,14 @@ export const Objetivos = styled.section`
   gap: 24px;
   align-items: stretch;
   margin: 0 auto;
+  height: max-content;
   padding: 32px 80px;
   width: 100%;
   background-color: ${(props) => props.theme.colors.gray950};
   flex-wrap: wrap;
 
   .card {
+    height: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 30px;
@@ -424,7 +426,6 @@ export const HeaderBlog = styled.section`
   .botaoPost {
     display: flex;
     justify-content: right;
-    padding-bottom: 72px;
   }
   .cabeçalho h1 {
     font-weight: 800;
