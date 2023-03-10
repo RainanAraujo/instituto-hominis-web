@@ -144,9 +144,7 @@ export default function Home({
               </div>
             </div>
             <div className="containerImages">
-              <div className="largerImage">
-                <div className="smallerImage"></div>
-              </div>
+              <div className="largerImage"></div>
             </div>
           </div>
         </Presentation>

@@ -1,57 +1,106 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
+  background-color: ${(props) => props.theme.colors.black};
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    min-height: 350px;
+    width: 100%;
+    max-width: 1280px;
     background-color: ${(props) => props.theme.colors.black};
+    margin: 0 auto;
+    padding: 72px 80px 44px;
+    position: relative;
+  }
+  p {
+    border-top: 1px solid #215d7f;
+    padding: 32px 0px 0px;
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        gap: 64px;
-        min-height: 350px;
-        width: 100%;
-        max-width: 1280px;
-        background-color: ${(props) => props.theme.colors.black};
-        margin: 0 auto;
-        padding: 72px 80px 44px;
-        position: relative;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+  }
+  .wrapperFooter {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .linkColumn {
+    > h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 16px;
+      color: #ffffff;
+      margin-bottom: 20px;
     }
-    p {
-        border-top: 1px solid #215d7f;
-        padding: 32px 0px 0px;
-
-        font-size: 0.9rem;
-        font-weight: 500;
-        text-align: center;
-        color: white;
+  }
+  .linkGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    > a {
+      color: #e1e1e1;
     }
+  }
+  .socialNetworkingIcons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    svg {
+      color: #3a9dd7;
+    }
+  }
+  /* Responsividade */
+  @media only screen and (max-width: 1024px) {
     .wrapperFooter {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
     }
+    .content {
+      padding: 72px 60px 44px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .wrapperFooter {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
     .linkColumn {
-        > h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 16px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
+      max-width: 150px;
+      margin-bottom: 16px;
     }
-    .linkGroup {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        > a {
-            color: #e1e1e1;
-        }
+
+    p {
+      padding: 24px 0px 0px;
     }
-    .socialNetworkingIcons {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        svg {
-            color: #3a9dd7;
-        }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .wrapperFooter {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 18px;
     }
+
+    .linkColumn {
+      max-width: 150px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      padding: 24px 0px 0px;
+    }
+  }
 `;
