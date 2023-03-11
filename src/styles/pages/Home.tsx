@@ -85,6 +85,11 @@ export const Presentation = styled.section`
         padding-left: 8px;
         border-left: 1px solid ${(props) => props.theme.colors.gray600};
       }
+      @media only screen and (max-width: 940px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
 `;
@@ -463,8 +468,9 @@ export const Blog = styled.section`
     flex-direction: column;
     flex-wrap: wrap;
     gap: 24px;
+
     padding: 20px;
-    align-items: center;
+    align-items: center
     .principal {
       display: flex;
       flex-direction: column;
