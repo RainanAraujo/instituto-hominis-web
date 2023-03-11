@@ -71,4 +71,35 @@ export const Noticia = styled.div`
     line-height: 1.85rem;
     color: ${(props) => props.theme.colors.gray400};
   }
+  @media only screen and (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px;
+    align-items: center;
+    .titulo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 18px;
+      h1 {
+        font-size: 24px;
+      }
+    }
+    .imagem {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: inherit;
+      }
+    }
+    .descricao {
+      text-align: center;
+    }
+  }
 `;
