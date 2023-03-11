@@ -60,48 +60,21 @@ export const Container = styled.footer`
     .wrapperFooter {
       display: flex;
       justify-content: center;
+      flex-direction: column;
       gap: 18px;
     }
     .content {
       padding: 20px;
     }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .wrapperFooter {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
     .linkColumn {
-      max-width: 150px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      padding: 24px 0px 0px;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .wrapperFooter {
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      flex-wrap: wrap;
-      gap: 18px;
+      align-items: center;
     }
-
-    .linkColumn {
-      max-width: 150px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      padding: 24px 0px 0px;
+    .linkGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
@@ -109,5 +82,7 @@ export const Container = styled.footer`
 export const ImageLogo = styled(Image)`
   @media only screen and (max-width: 940px) {
     width: 100px;
+    margin: 0 auto;
+    padding: 0px;
   }
 `;

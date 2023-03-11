@@ -69,6 +69,13 @@ export const Presentation = styled.section`
       justify-content: flex-start;
       margin-top: 1rem;
       gap: 10px;
+      @media only screen and (max-width: 940px) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        gap: 6px;
+      }
       .wordCard {
         display: flex;
         align-items: center;
