@@ -74,7 +74,7 @@ export const Presentation = styled.section`
         align-items: center;
         justify-content: flex-start;
         margin-top: 1rem;
-        gap: 6px;
+        gap: 3px;
       }
       .wordCard {
         display: flex;
