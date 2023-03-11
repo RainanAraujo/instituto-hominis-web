@@ -1,5 +1,5 @@
 import ButtonToTop from "@/components/ButtonToTop";
-import { Container } from "@/styles/components/Footer";
+import { Container, ImageLogo } from "@/styles/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsappLogo, InstagramLogo } from "phosphor-react";
@@ -12,7 +12,7 @@ export default function Footer(
     <Container {...props}>
       <div className="content">
         <div className="wrapperFooter">
-          <Image
+          <ImageLogo
             src="/images/logovertical.svg"
             width={120}
             height={86}
