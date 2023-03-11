@@ -7,6 +7,8 @@ import {
   Vantagens,
   Blog,
   HeaderBlog,
+  ImageEquipe,
+  ImagePresent,
 } from "@/styles/pages/Home";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
@@ -143,9 +145,12 @@ export default function Home({
                 </div>
               </div>
             </div>
-            <div className="containerImages">
-              <div className="largerImage"></div>
-            </div>
+            <ImagePresent
+              src="/images/largerImage.png"
+              width={500}
+              height={500}
+              alt="Imagem de apresentação"
+            ></ImagePresent>
           </div>
         </Presentation>
         <AnimationOnScroll
@@ -167,7 +172,12 @@ export default function Home({
                   expressivos para a sociedade.
                 </p>
               </div>
-              <div className="imageConcept"></div>
+              <ImageEquipe
+                src="/images/equipe.png"
+                width={500}
+                height={500}
+                alt="Equipe"
+              ></ImageEquipe>
             </div>
           </KeyWord>
         </AnimationOnScroll>

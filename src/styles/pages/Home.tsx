@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.main`
   background-color: ${(props) => props.theme.colors.white};
@@ -38,6 +39,12 @@ export const Presentation = styled.section`
   .containerTitle {
     width: 486px;
     margin-bottom: 40px;
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     color: white;
     > h1 {
@@ -50,8 +57,10 @@ export const Presentation = styled.section`
       text-align: left;
       line-height: 1.6;
       font-size: 1rem;
-
       margin-bottom: 1rem;
+      @media only screen and (max-width: 940px) {
+        text-align: center;
+      }
     }
     .groupWordsCards {
       display: flex;
@@ -75,21 +84,24 @@ export const Presentation = styled.section`
         padding-left: 8px;
         border-left: 1px solid ${(props) => props.theme.colors.gray600};
       }
+      @media only screen and (max-width: 940px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
-  .containerImages {
-    width: 24.75rem;
-    height: 24.25rem;
-    .largerImage {
-      position: relative;
-      width: 22.75rem;
-      height: 22.75rem;
-      border-radius: 50%;
-      background-image: url("/images/largerImage.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+`;
+export const ImagePresent = styled(Image)`
+  position: relative;
+  width: 22.75rem;
+  height: 22.75rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media only screen and (max-width: 940px) {
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -102,9 +114,25 @@ export const KeyWord = styled.section`
     padding: 64px 80px;
     padding-bottom: 24px;
     margin: 0 auto;
+    gap: 24px;
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
     .wordKeyConceptions {
       width: 551px;
+      @media only screen and (max-width: 940px) {
+        width: 100%;
+        h1 {
+          text-align: center;
+        }
+        p {
+          text-align: center;
+        }
+      }
+
       h1 {
         font-weight: 600;
         font-size: 2.5rem;
@@ -131,7 +159,6 @@ export const KeyWord = styled.section`
           gap: 4px;
           align-items: center;
           justify-content: center;
-
           width: 10.25rem;
           height: 8rem;
           padding: 32px 26px 24px;
@@ -146,29 +173,23 @@ export const KeyWord = styled.section`
           }
         }
       }
-      @media only screen and (max-width: 960px) {
-        width: 100%;
-      }
     }
     .imageConcept {
       height: 360px;
       width: 425px;
       border-radius: 32px;
       background-color: #f1f1f1;
-      background-image: url("/images/equipe.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
-    @media only screen and (max-width: 940px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: wrap;
-      h1 {
-        text-align: center;
-      }
-    }
+  }
+`;
+export const ImageEquipe = styled(Image)`
+  height: auto;
+  @media only screen and (max-width: 940px) {
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -323,7 +344,6 @@ export const Blog = styled.section`
   width: 100%;
   background-color: white;
   max-width: 1280px;
-  flex-wrap: wrap;
   .principal:hover {
     transform: scale(1.05);
   }
@@ -379,7 +399,6 @@ export const Blog = styled.section`
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      flex-wrap: wrap;
       width: 45%;
     }
   }
@@ -392,8 +411,8 @@ export const Blog = styled.section`
     @media only screen and (max-width: 940px) {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
     }
   }
 
@@ -445,8 +464,58 @@ export const Blog = styled.section`
   @media only screen and (max-width: 940px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex-wrap: wrap;
+    gap: 24px;
+    .principal {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 45%;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .feed {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      gap: 24px;
+    }
+    .texto {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .principal figure img {
+      width: 100%;
+      height: auto;
+    }
+    .feed figure img {
+      width: 100%;
+      height: auto;
+    }
+    .principal h2 {
+      font-size: 24px;
+    }
+    .principal a {
+      font-size: 14px;
+    }
+    .principal p {
+      -webkit-line-clamp: 3;
+      line-height: 1.5rem;
+    }
+    .card h3 {
+      font-size: 18px;
+    }
+    .card p {
+      -webkit-line-clamp: 3;
+      line-height: 1.5rem;
+    }
   }
 `;
 export const HeaderBlog = styled.section`
@@ -467,7 +536,6 @@ export const HeaderBlog = styled.section`
     font-weight: 800;
     font-size: 42px;
     line-height: 105.02%;
-    height: 88px;
     width: 85%;
     color: ${(props) => props.theme.colors.black};
   }
