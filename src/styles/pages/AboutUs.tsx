@@ -109,7 +109,7 @@ export const Container = styled.main`
       gap: 16px;
       border-radius: 8px;
       background-color: white;
-      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      /* box-shadow: .5px .5px 5px rgba(0, 0, 0, 0.2); */
       .header {
         display: flex;
         flex-direction: column;
@@ -158,19 +158,24 @@ export const Container = styled.main`
         line-height: 1.8;
       }
     }
+    .titleCertificates {
+      text-align: center;
+    }
     .certificates {
       display: flex;
-      gap: 20px;
       flex-direction: column;
       height: fit-content;
+      width: 100%;
+      gap: 20px;
       flex-direction: column;
+
       .background {
         height: 80%;
-        min-width: 50%;
+        width: 100%;
       }
       .cardCertificates{
         height: fit-content;
-        width: 280px;
+        width: 260px;
         h2 {
           font-size: 1.2rem;
         }

@@ -100,7 +100,6 @@ export const ContainerMobileMenu = styled.div`
   }
   .menuMobile {
     display: flex !important;
-    display: flex;
     
     max-width: 80%;
     ul {
@@ -115,6 +114,8 @@ export const ContainerMobileMenu = styled.div`
       width: 100%;
       font-size: 2rem;
        li a {
+          display:block;
+          text-align:center;
           color: ${(props) => props.theme.colors.black};
           font-weight: 400;
         }
