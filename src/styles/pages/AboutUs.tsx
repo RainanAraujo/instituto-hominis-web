@@ -109,7 +109,7 @@ export const Container = styled.main`
       gap: 16px;
       border-radius: 8px;
       background-color: white;
-      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      /* box-shadow: .5px .5px 5px rgba(0, 0, 0, 0.2); */
       .header {
         display: flex;
         flex-direction: column;
@@ -143,34 +143,37 @@ export const Container = styled.main`
       font-size: 0.9rem;
     }
     .head {
-      span {
-        font-size: 0.9rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
       padding: 24px 0px;
       flex-direction: column;
       gap: 20px;
+      h1 {
+        text-align:center;
+        font-size: 1.8rem;
+      }
       span {
         font-size:.9rem;
         text-align:justify;
         line-height: 1.8;
       }
     }
+    .titleCertificates {
+      text-align: center;
+    }
     .certificates {
       display: flex;
-      gap: 20px;
       flex-direction: column;
       height: fit-content;
+      width: 100%;
+      gap: 20px;
       flex-direction: column;
+
       .background {
         height: 80%;
-        min-width: 50%;
+        width: 100%;
       }
       .cardCertificates{
         height: fit-content;
-        width: 280px;
+        width: 260px;
         h2 {
           font-size: 1.2rem;
         }
@@ -196,6 +199,9 @@ export const Container = styled.main`
     }
     .classifications{
       padding: 20px 0;
+      h1 {
+        text-align: center;
+      }
       .qualifications{
         flex-direction: column;
         gap: 20px;
@@ -204,6 +210,10 @@ export const Container = styled.main`
           width: 100%;
           h2 {
             font-size: 1.2rem;
+            text-align:center;
+          }
+          span {
+            text-align:center;
           }
         }
       }
