@@ -7,6 +7,11 @@ export const Container = styled.main`
   .limitWidth {
     max-width: 1280px;
   }
+  @media screen and (min-width: 940px) {
+    #main {
+      min-width: 1000px;
+    }
+  }
 `;
 
 export const Presentation = styled.section`
@@ -19,8 +24,16 @@ export const Presentation = styled.section`
     background-color: ${(props) => props.theme.colors.black};
     margin: 0 auto;
     padding: 0 80px 40px;
-    flex-wrap: wrap;
     max-width: 1280px;
+    @media only screen and (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      h1 {
+        text-align: center;
+      }
+    }
   }
   .containerTitle {
     width: 486px;
@@ -73,19 +86,6 @@ export const Presentation = styled.section`
       height: 22.75rem;
       border-radius: 50%;
       background-image: url("/images/largerImage.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .smallerImage {
-      position: absolute;
-      top: 59%;
-      right: -8%;
-      width: 10.75rem;
-      height: 10.75rem;
-      border-radius: 50%;
-      background-color: white;
-      background-image: url("/images/smallerImage.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -146,6 +146,9 @@ export const KeyWord = styled.section`
           }
         }
       }
+      @media only screen and (max-width: 960px) {
+        width: 100%;
+      }
     }
     .imageConcept {
       height: 360px;
@@ -156,6 +159,15 @@ export const KeyWord = styled.section`
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+    @media only screen and (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      h1 {
+        text-align: center;
+      }
     }
   }
 `;
@@ -305,7 +317,6 @@ export const Vantagens = styled.section`
 export const Blog = styled.section`
   display: flex;
   justify-content: space-between;
-
   align-items: stretch;
   margin: 0 auto 64px;
   padding: 24px 80px;
@@ -326,12 +337,17 @@ export const Blog = styled.section`
     flex-direction: column;
     gap: 24px;
     width: 50%;
+
     figure {
       img {
         border-radius: 6px;
         width: 100%;
         height: auto;
         aspect-ratio: inherit;
+        @media only screen and (max-width: 940px) {
+          width: 220px;
+          height: auto;
+        }
       }
     }
     h2 {
@@ -358,6 +374,14 @@ export const Blog = styled.section`
     img {
       width: 100%;
     }
+    @media only screen and (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 45%;
+    }
   }
 
   .card {
@@ -365,6 +389,12 @@ export const Blog = styled.section`
     justify-content: center;
     align-items: center;
     gap: 18px;
+    @media only screen and (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
   }
 
   .texto {
@@ -412,6 +442,12 @@ export const Blog = styled.section`
       color: ${(props) => props.theme.colors.gray600};
     }
   }
+  @media only screen and (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 `;
 export const HeaderBlog = styled.section`
   display: flex;
@@ -419,7 +455,6 @@ export const HeaderBlog = styled.section`
   gap: 24px;
   align-items: center;
   margin: 0 auto;
-  margin-top: 32px;
   padding: 24px 80px;
   width: 100%;
   max-width: 1280px;
@@ -432,8 +467,16 @@ export const HeaderBlog = styled.section`
     font-weight: 800;
     font-size: 42px;
     line-height: 105.02%;
-    width: 522px;
     height: 88px;
+    width: 85%;
     color: ${(props) => props.theme.colors.black};
+  }
+  @media only screen and (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 24px;
   }
 `;
