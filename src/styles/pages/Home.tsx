@@ -31,6 +31,7 @@ export const Presentation = styled.section`
       flex-direction: column;
       align-items: center;
       flex-wrap: wrap;
+      padding: 20px;
       h1 {
         text-align: center;
       }
@@ -84,11 +85,6 @@ export const Presentation = styled.section`
         padding-left: 8px;
         border-left: 1px solid ${(props) => props.theme.colors.gray600};
       }
-      @media only screen and (max-width: 940px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
     }
   }
 `;
@@ -116,6 +112,7 @@ export const KeyWord = styled.section`
     margin: 0 auto;
     gap: 24px;
     @media only screen and (max-width: 940px) {
+      padding: 20px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -466,6 +463,8 @@ export const Blog = styled.section`
     flex-direction: column;
     flex-wrap: wrap;
     gap: 24px;
+    padding: 20px;
+    align-items: center;
     .principal {
       display: flex;
       flex-direction: column;
@@ -545,6 +544,10 @@ export const HeaderBlog = styled.section`
     align-items: center;
     flex-wrap: wrap;
     gap: 24px;
-    padding: 24px 24px;
+    padding: 20px;
+    .cabeçalho h1 {
+      text-align: center;
+      width: 100%;
+    }
   }
 `;

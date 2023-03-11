@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.footer`
   background-color: ${(props) => props.theme.colors.black};
@@ -62,7 +63,7 @@ export const Container = styled.footer`
       gap: 18px;
     }
     .content {
-      padding: 72px 60px 44px;
+      padding: 20px;
     }
   }
 
@@ -102,5 +103,11 @@ export const Container = styled.footer`
     p {
       padding: 24px 0px 0px;
     }
+  }
+`;
+
+export const ImageLogo = styled(Image)`
+  @media only screen and (max-width: 940px) {
+    width: 100px;
   }
 `;
