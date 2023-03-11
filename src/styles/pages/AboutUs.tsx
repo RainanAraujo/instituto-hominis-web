@@ -143,15 +143,13 @@ export const Container = styled.main`
       font-size: 0.9rem;
     }
     .head {
-      span {
-        font-size: 0.9rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
       padding: 24px 0px;
       flex-direction: column;
       gap: 20px;
+      h1 {
+        text-align:center;
+        font-size: 1.8rem;
+      }
       span {
         font-size:.9rem;
         text-align:justify;
@@ -201,6 +199,9 @@ export const Container = styled.main`
     }
     .classifications{
       padding: 20px 0;
+      h1 {
+        text-align: center;
+      }
       .qualifications{
         flex-direction: column;
         gap: 20px;
@@ -209,6 +210,10 @@ export const Container = styled.main`
           width: 100%;
           h2 {
             font-size: 1.2rem;
+            text-align:center;
+          }
+          span {
+            text-align:center;
           }
         }
       }
