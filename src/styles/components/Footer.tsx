@@ -54,4 +54,26 @@ export const Container = styled.footer`
             color: #3a9dd7;
         }
     }
+    @media (max-width: 940px) {
+        .content {
+            align-items: center;
+            padding: 72px 40px 44px;
+        }
+        .wrapperFooter {
+            width: fit-content;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .linkColumn {
+            display: inline-block;
+            > h3 {
+                margin-bottom: 12px;
+            }
+        }
+        .linkGroup {
+            gap: 8px;
+        }
+    }
+
+
 `;

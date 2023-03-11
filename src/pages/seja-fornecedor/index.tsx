@@ -22,7 +22,9 @@ export default function sejaFornecedor() {
             rejects, dislikes, or avoids pleasure itself.
           </p>
         </div>
-        <form action="" method="post">
+        <form action="https://formsubmit.co/jadson.hudson78@gmail.com"
+                    method="POST"
+                    encType="multipart/form-data" >
           <div className="campo">
             <label htmlFor="inome">Nome *</label>
             <input
@@ -46,6 +48,13 @@ export default function sejaFornecedor() {
             />
           </div>
           <Button>Enviar</Button>
+                    <input type="hidden" name="_subject" value="Fornecedor" />
+                    <input
+                        type="hidden"
+                        name="_autoresponse"
+                        value="Agradecemos pela submissão"
+                    ></input>
+                    <input type="hidden" name="_next" value="http://localhost:3000/seja-fornecedor"></input>
         </form>
       </Container>
       <Footer />
