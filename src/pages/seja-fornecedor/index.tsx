@@ -3,10 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import Head from "next/head";
-import React from "react";
+import { useRef } from "react";
 
 export default function sejaFornecedor() {
-  const CNPJRef = React.useRef<HTMLInputElement>(null);
+  const CNPJRef = useRef<HTMLInputElement>(null);
   function validateCNPJ(cnpj: any) {
     cnpj = cnpj.replace(/[^\d]+/g, "");
     if (cnpj == "") return false;
