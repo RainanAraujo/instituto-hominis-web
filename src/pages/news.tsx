@@ -18,12 +18,12 @@ export default function News({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [postsFetched, setPostsFetched] = useState(1);
+  const [postsFetched, setPostsFetched] = useState(3);
   const { id } = useRouter().query;
 
   function fetchMorePosts() {
-    setPosts(getThreePosts(postsFetched + 1));
-    setPostsFetched(postsFetched + 1);
+    setPosts(getThreePosts(postsFetched + 3));
+    setPostsFetched(postsFetched + 3);
   }
 
   function extractDataPosts(dataFull: any) {

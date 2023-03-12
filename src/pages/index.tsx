@@ -339,7 +339,7 @@ export default function Home({
             </div>
           </AnimationOnScroll>
           <AnimationOnScroll
-            animateIn="animate__fadeInRight"
+            animateIn="animate__fadeInDown"
             animateOnce={true}
             offset={500}
           >

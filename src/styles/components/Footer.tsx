@@ -64,12 +64,17 @@ export const Container = styled.footer`
       gap: 18px;
     }
     .content {
-      padding: 20px;
+      padding: 40px 20px;
+      padding-top: 62px;
     }
     .linkColumn {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 12px;
+      h3 {
+        margin-bottom: 12px;
+      }
     }
     .linkGroup {
       display: flex;

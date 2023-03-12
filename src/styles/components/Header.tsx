@@ -17,7 +17,7 @@ export const Container = styled.header<HeaderProps>`
     align-items: center;
     margin: 0 auto;
     padding: 24px 80px;
-    
+
     .HambuguerButton {
       display: none;
       color: ${(props) => props.theme.colors.white};
@@ -27,57 +27,61 @@ export const Container = styled.header<HeaderProps>`
 
       max-width: 80%;
       ul {
-      display: flex;
+        display: flex;
 
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-  
-      width: 100%;
-      height: 24px;
-  
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-      font-size: 1rem;
-       li {
-        transition: all 0.2s;
-        &:hover {
-          transform: translateY(-10%);
-          border-bottom: 3px solid
-            ${(props) =>
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+
+        width: 100%;
+        height: 24px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        font-size: 1rem;
+        li {
+          transition: all 0.2s;
+          &:hover {
+            transform: translateY(-10%);
+            border-bottom: 3px solid
+              ${(props) =>
+                props.color === "primary"
+                  ? props.theme.colors.white
+                  : props.theme.colors.black};
+          }
+          a {
+            color: ${(props) =>
               props.color === "primary"
                 ? props.theme.colors.white
                 : props.theme.colors.black};
-        }
-        a {
-          color: ${(props) =>
-            props.color === "primary"
-              ? props.theme.colors.white
-              : props.theme.colors.black};
-          font-weight: 400;
+            font-weight: 400;
+          }
         }
       }
-    }
     }
   }
   @media (max-width: 940px) {
     .content {
       display: flex;
-      
+
       padding: 24px 20px;
       justify-content: space-between;
       .HambuguerButton {
         display: block;
-       }
-      
+        svg {
+          color: ${(props) =>
+            props.color === "primary"
+              ? props.theme.colors.gray900
+              : props.theme.colors.black};
+        }
+      }
+
       .menu {
         display: none;
-        }
-
+      }
     }
   }
-
 `;
 
 export const ContainerMobileMenu = styled.div`
@@ -100,28 +104,26 @@ export const ContainerMobileMenu = styled.div`
   }
   .menuMobile {
     display: flex !important;
-    
+
     max-width: 80%;
     ul {
       display: flex;
       flex-direction: column;
-      
+
       justify-content: space-between;
       align-items: center;
       padding: 0px;
       gap: 12px;
-  
+
       width: 100%;
       font-size: 2rem;
-       li a {
-          display:block;
-          text-align:center;
-          color: ${(props) => props.theme.colors.black};
-          font-weight: 400;
-        }
-      
+      li a {
+        display: block;
+        text-align: center;
+        color: ${(props) => props.theme.colors.black};
+        font-weight: 400;
+      }
     }
-    
   }
   @keyframes showMenu {
     from {

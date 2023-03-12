@@ -43,7 +43,10 @@ export default function Footer(
           <div className="linkColumn">
             <h3>Redes sociais</h3>
             <div className="socialNetworkingIcons">
-              <Link href="#">
+              <Link
+                href="https://api.whatsapp.com/send/?phone=5598985811294&text&type=phone_number&app_absent=0"
+                target="_blank"
+              >
                 <WhatsappLogo
                   size={32}
                   weight="regular"
@@ -51,7 +54,10 @@ export default function Footer(
                   height={24}
                 />
               </Link>
-              <Link href="#">
+              <Link
+                href="https://www.instagram.com/institutohominis/"
+                target="_blank"
+              >
                 <InstagramLogo
                   size={32}
                   weight="regular"

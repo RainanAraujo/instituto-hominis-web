@@ -31,7 +31,7 @@ export const Presentation = styled.section`
       flex-direction: column;
       align-items: center;
       flex-wrap: wrap;
-      padding: 20px;
+      padding: 52px 20px;
       h1 {
         text-align: center;
       }
@@ -72,7 +72,7 @@ export const Presentation = styled.section`
       @media only screen and (max-width: 940px) {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         margin-top: 1rem;
         gap: 3px;
       }
@@ -119,7 +119,7 @@ export const KeyWord = styled.section`
     margin: 0 auto;
     gap: 24px;
     @media only screen and (max-width: 940px) {
-      padding: 20px;
+      padding: 64px 20px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -147,7 +147,7 @@ export const KeyWord = styled.section`
       p {
         color: ${(props) => props.theme.colors.gray600};
         font-size: 1rem;
-        text-align: justify;
+        text-align: center;
         margin-bottom: 2rem;
         line-height: 1.7rem;
       }
@@ -495,7 +495,8 @@ export const HeaderBlog = styled.section`
   gap: 24px;
   align-items: center;
   margin: 0 auto;
-  padding: 24px 80px;
+  padding: 32px 80px;
+  margin-top: 12px;
   width: 100%;
   max-width: 1280px;
   flex-wrap: wrap;
@@ -516,7 +517,7 @@ export const HeaderBlog = styled.section`
     align-items: center;
     flex-wrap: wrap;
     gap: 24px;
-    padding: 20px;
+    padding: 32px 20px;
     .cabeçalho h1 {
       text-align: center;
       width: 100%;

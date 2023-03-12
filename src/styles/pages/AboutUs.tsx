@@ -8,6 +8,7 @@ export const Container = styled.main`
   padding: 80px 0;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 24px;
   .head {
     padding: 0 80px;
     margin-bottom: 80px;
@@ -17,6 +18,7 @@ export const Container = styled.main`
       color: ${(props) => props.theme.colors.black};
       font-size: 2rem;
       width: 100%;
+      margin-top: 16px;
     }
     span {
       width: 100%;
@@ -57,19 +59,19 @@ export const Container = styled.main`
         gap: 8px;
         width: 400px;
         span {
-           color: ${(props) => props.theme.colors.gray600};
+          color: ${(props) => props.theme.colors.gray600};
         }
       }
     }
   }
   .compromisse {
     padding: 80px 80px;
-    
+
     display: flex;
     justify-content: space-between;
     gap: 20px;
     h1 {
-      width:50px;
+      width: 50px;
       color: ${(props) => props.theme.colors.black};
       font-size: 2.4rem;
     }
@@ -109,7 +111,9 @@ export const Container = styled.main`
       gap: 16px;
       border-radius: 8px;
       background-color: white;
-      /* box-shadow: .5px .5px 5px rgba(0, 0, 0, 0.2); */
+      -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+      box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
       .header {
         display: flex;
         flex-direction: column;
@@ -147,12 +151,12 @@ export const Container = styled.main`
       flex-direction: column;
       gap: 20px;
       h1 {
-        text-align:center;
+        text-align: center;
         font-size: 1.8rem;
       }
       span {
-        font-size:.9rem;
-        text-align:justify;
+        font-size: 0.9rem;
+        text-align: justify;
         line-height: 1.8;
       }
     }
@@ -171,9 +175,10 @@ export const Container = styled.main`
         height: 80%;
         width: 100%;
       }
-      .cardCertificates{
+      .cardCertificates {
         height: fit-content;
-        width: 260px;
+        width: 80%;
+
         h2 {
           font-size: 1.2rem;
         }
@@ -182,12 +187,12 @@ export const Container = styled.main`
         }
       }
     }
-    
+
     .compromisse {
       flex-direction: column;
       padding: 80px 20px;
       gap: 20px;
-      text-align:center;
+      text-align: center;
       h1 {
         font-size: 1.8rem;
         width: 100%;
@@ -197,27 +202,25 @@ export const Container = styled.main`
         width: 100%;
       }
     }
-    .classifications{
+    .classifications {
       padding: 20px 0;
       h1 {
         text-align: center;
       }
-      .qualifications{
+      .qualifications {
         flex-direction: column;
         gap: 20px;
-        .quali{
-          
+        .quali {
           width: 100%;
           h2 {
             font-size: 1.2rem;
-            text-align:center;
+            text-align: center;
           }
           span {
-            text-align:center;
+            text-align: center;
           }
         }
       }
     }
-    
-    }
+  }
 `;
