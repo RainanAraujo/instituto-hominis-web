@@ -15,6 +15,14 @@ export const Container = styled.main`
   & > div:nth-child(2) {
     margin-top: -420px;
   }
+  @media (max-width: 940px) {
+    .background {
+      height: 260px;
+    }
+    & > div:nth-child(2) {
+      margin-top: -280px;
+    }
+  }
 `;
 
 export const Noticia = styled.div`

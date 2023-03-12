@@ -18,13 +18,25 @@ export const Container = styled.main`
       color: ${(props) => props.theme.colors.black};
       font-size: 2rem;
       width: 100%;
-      margin-top: 16px;
     }
-    span {
+    .rightText {
       width: 100%;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: ${(props) => props.theme.colors.gray600};
+
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      strong {
+        color: ${(props) => props.theme.colors.black};
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 500;
+      }
+      p {
+        color: ${(props) => props.theme.colors.gray600};
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
     }
   }
   .titleCertificates {
@@ -101,7 +113,7 @@ export const Container = styled.main`
       border-radius: 8px;
     }
     .cardCertificates {
-      width: 300px;
+      width: 400px;
       height: 260px;
       display: flex;
       flex-direction: column;
@@ -142,6 +154,7 @@ export const Container = styled.main`
     padding: 0 20px;
     h1 {
       font-size: 1.8rem;
+      margin-top: 16px;
     }
     span {
       font-size: 0.9rem;
@@ -154,10 +167,8 @@ export const Container = styled.main`
         text-align: center;
         font-size: 1.8rem;
       }
-      span {
-        font-size: 0.9rem;
-        text-align: justify;
-        line-height: 1.8;
+      .rightText {
+        text-align: center;
       }
     }
     .titleCertificates {

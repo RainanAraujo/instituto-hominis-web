@@ -50,12 +50,12 @@ export default function Header({ color = "primary" }: HeaderProps) {
             </li>
             <li>
               <Link href="/curriculo" target="_self">
-                Envie seu currículo
+                Faça parte
               </Link>
             </li>
             <li>
               <Link href="/seja-fornecedor" target="_self">
-                Seja um fornecedor
+                Faça parte
               </Link>
             </li>
           </ul>
@@ -113,7 +113,7 @@ export default function Header({ color = "primary" }: HeaderProps) {
               </li>
               <li>
                 <Link href="/curriculo" target="_self">
-                  Envie seu currículo
+                  Faça parte
                 </Link>
               </li>
               <li>

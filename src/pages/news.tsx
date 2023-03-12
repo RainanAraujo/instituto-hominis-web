@@ -48,7 +48,7 @@ export default function News({
     return array;
   }
 
-  function getThreePosts(numPosts: number = 1) {
+  function getThreePosts(numPosts: number = 3) {
     if (id != undefined) {
       return extractDataPosts(data);
     } else {

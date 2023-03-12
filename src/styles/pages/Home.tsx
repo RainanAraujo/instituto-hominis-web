@@ -147,7 +147,7 @@ export const KeyWord = styled.section`
       p {
         color: ${(props) => props.theme.colors.gray600};
         font-size: 1rem;
-        text-align: center;
+
         margin-bottom: 2rem;
         line-height: 1.7rem;
       }

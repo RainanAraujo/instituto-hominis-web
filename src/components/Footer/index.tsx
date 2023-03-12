@@ -29,7 +29,7 @@ export default function Footer(
           <div className="linkColumn">
             <h3>Junte-se</h3>
             <div className="linkGroup">
-              <Link href="#">Envie seu currículo</Link>
+              <Link href="#"> Faça parte</Link>
               <Link href="#">Seja um fornecedor</Link>
             </div>
           </div>

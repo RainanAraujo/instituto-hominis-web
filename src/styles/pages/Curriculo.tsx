@@ -23,6 +23,13 @@ export const Container = styled.main`
       margin-bottom: 1.6rem;
       font-weight: 800;
     }
+    strong {
+      color: ${(props) => props.theme.colors.black};
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1.6rem;
+      font-weight: 500;
+    }
     p {
       color: ${(props) => props.theme.colors.gray600};
       text-align: center;
@@ -40,8 +47,7 @@ export const Container = styled.main`
       flex-direction: column;
       width: 100%;
       margin-bottom: 1.5rem;
-      label,
-      p {
+      label {
         font-size: 1rem;
         margin-bottom: 10px;
       }
@@ -58,7 +64,7 @@ export const Container = styled.main`
         border: 1px solid ${(props) => props.theme.colors.gray600};
         border-radius: 4px;
         padding: 1rem;
-
+        margin-bottom: 0;
         color: ${(props) => props.theme.colors.gray600};
         text-align: center;
         cursor: pointer;
@@ -67,7 +73,7 @@ export const Container = styled.main`
   }
   @media (max-width: 940px) {
     padding: 0 40px 20px;
-    button {
+    .submit {
       width: 100%;
       padding: 16px 0;
     }

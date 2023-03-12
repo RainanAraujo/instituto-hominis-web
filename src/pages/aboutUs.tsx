@@ -18,79 +18,75 @@ export default function AboutUs({ texto }: AboutUsProps) {
       <Container>
         <div className="head limitWidth">
           <h1>
-            Uma gestão compartilhada da saúde em conjunto ao poder público, nas
-            esferas municipais, estaduais e federais.
+            Somos o Instituto Hominis, uma organização dedicada à gestão
+            compartilhada da saúde.
           </h1>
-          <span>
-            Disponibilizamos ao poder público modelos eficientes de gestão de
-            pessoas, serviços, hospitais e demais equipamentos de saúde,
-            adotando modelos de excelência e práticas inovadoras, através de uma
-            equipe multidisciplinar e especialista focada em atendimento
-            humanizado na prestação de serviços de qualidade, gerando assim
-            resultados expressivos para toda a sociedade.
-          </span>
+          <div className="rightText">
+            <strong>
+              Nossa missão é contribuir para o fortalecimento do sistema de
+              saúde, promovendo o acesso universal, integral e de qualidade aos
+              serviços de saúde para a população.
+            </strong>
+            <p>
+              Nosso trabalho consiste em desenvolver e implementar soluções
+              inovadoras e eficientes para a gestão de serviços de saúde,
+              atuando em parceria com governos, organizações sociais e empresas
+              privadas. Trabalhamos com um time multidisciplinar de
+              profissionais especializados em saúde pública, administração e
+              gestão de projetos. Seja bem-vindo ao Instituto Hominis. Junte-se
+              a nós na construção de um sistema de saúde mais justo e acessível
+              para todos.
+            </p>
+          </div>
         </div>
-        <h1 className="titleCertificates">Atestados de capacidade técnica</h1>
+        <h1 className="titleCertificates">Certificados</h1>
         <div className="certificates limitWidth">
           <div className="background"></div>
+
           <div className="cardCertificates">
             <div className="header">
               <FileText size={32} />
-              <h2>Hospital de Câncer Tarquínio Lopes Filho</h2>
+              <h2>
+                Qualificação como Organização Social (OS) - Secretaria de Estado
+                de Saúde (MA)
+              </h2>
             </div>
 
-            <span>Empresa Maranhense de Serviços Hospitalares - EMSERH</span>
+            <span>Portaria/SES/MA nº 1272/2022</span>
           </div>
           <div className="cardCertificates">
             <div className="header">
               <FileText size={32} />
-              <h2>Policlínica Vila Luizão</h2>
+              <h2>
+                Certificado de Entidade Beneficente de Assistência Social em
+                Saúde (CEBAS) - Ministério da Saúde
+              </h2>
             </div>
 
-            <span>
-              Ultrassonografia - Empresa Maranhense de Serviços Hospitalares -
-              EMSERH
-            </span>
-          </div>
-          <div className="cardCertificates">
-            <div className="header">
-              <FileText size={32} />
-              <h2>Hospital Geral de Barreirinhas</h2>
-            </div>
-
-            <span>
-              Cardiologia - Empresa Maranhense de Serviços Hospitalares - EMSERH
-            </span>
+            <span>Em processo de conclusão</span>
           </div>
         </div>
         <div className="compromisse limitWidth">
           <h1>Nosso compromisso</h1>
           <span>
-            Cumprir com competência nossos contratos de gestão, dando
-            efetividade e promovendo melhorias contínuas nos serviços prestados,
-            de maneira que se promova uma saúde com mais dignidade e maior
-            cuidado com as pessoas.
+            Nosso compromisso é com a transparência e a ética em todas as nossas
+            atividades, sempre pautados pelos princípios da equidade, da justiça
+            social e da promoção da saúde como direito humano fundamental.
           </span>
         </div>
-        <div className="classifications limitWidth">
+        {/* <div className="classifications limitWidth">
           <h1>Qualificações e Certificações</h1>
           <div className="qualifications">
             <div className="quali">
-              <h2>
-                Qualificação como Organização Social (OS) - Secretaria de Estado
-                de Saúde (MA)
-              </h2>
-              <span>Portaria/SES/MA nº 1272/2022</span>
+              <h2></h2>
+              <span></span>
             </div>
             <div className="quali">
-              <h2>
-                Certificado de Entidade Beneficente de Assistência Social em
-                Saúde (CEBAS) - Ministério da Saúde
-              </h2>
-              <span>Em processo de conclusão</span>
+              <h2></h2>
+              <span></span>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
       <Footer />
     </>
