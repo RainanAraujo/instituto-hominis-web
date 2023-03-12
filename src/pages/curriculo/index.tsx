@@ -40,6 +40,7 @@ export default function Curriculo() {
       );
     }
   );
+  SelectItem.displayName = "SelectItem";
   return (
     <>
       <Head>
