@@ -7,6 +7,7 @@ import { useRef } from "react";
 
 export default function sejaFornecedor() {
   const CNPJRef = useRef<HTMLInputElement>(null);
+
   function validateCNPJ(cnpj: any) {
     cnpj = cnpj.replace(/[^\d]+/g, "");
     if (cnpj == "") return false;
