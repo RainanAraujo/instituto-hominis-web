@@ -39,7 +39,7 @@ export default function AboutUs({ texto }: AboutUsProps) {
             </p>
           </div>
         </div>
-        <h1 className="titleCertificates">Certificados</h1>
+        <h1 className="titleCertificates">Qualificações e Certificações</h1>
         <div className="certificates limitWidth">
           <div className="background"></div>
 

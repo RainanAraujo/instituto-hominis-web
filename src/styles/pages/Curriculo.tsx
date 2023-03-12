@@ -19,7 +19,6 @@ export const Container = styled.main`
     h1 {
       text-align: center;
       color: ${(props) => props.theme.colors.black};
-
       margin-bottom: 1.6rem;
       font-weight: 800;
     }
@@ -77,5 +76,25 @@ export const Container = styled.main`
       width: 100%;
       padding: 16px 0;
     }
+  }
+`;
+
+export const Seletivos = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-bottom: 4rem;
+  h1 {
+    text-align: center;
+    color: ${(props) => props.theme.colors.black};
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+  span {
+    text-align: center;
+    color: ${(props) => props.theme.colors.gray600};
+    font-size: 1rem;
   }
 `;

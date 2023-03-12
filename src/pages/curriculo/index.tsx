@@ -1,4 +1,4 @@
-import { Container } from "@/styles/pages/Curriculo";
+import { Container, Seletivos } from "@/styles/pages/Curriculo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
@@ -13,34 +13,34 @@ export default function Curriculo() {
     "Clique para anexar o currículo"
   );
 
-  interface SelectItemProps extends React.ComponentProps<typeof Select.Item> {
-    value: string;
-    children: React.ReactNode;
-    className?: string;
-  }
+  // interface SelectItemProps extends React.ComponentProps<typeof Select.Item> {
+  //   value: string;
+  //   children: React.ReactNode;
+  //   className?: string;
+  // }
 
-  const SelectItem = React.forwardRef(
-    (
-      { value, children, className, ...props }: SelectItemProps,
-      forwardedRef: React.Ref<HTMLDivElement>
-    ) => {
-      return (
-        <Select.Item
-          value={value}
-          {...props}
-          ref={forwardedRef}
-          onClick={(e) => e.stopPropagation()}
-          className={classnames("SelectItem", className)}
-        >
-          <Select.ItemText>{children}</Select.ItemText>
-          <Select.ItemIndicator className="SelectItemIndicator">
-            <Check />
-          </Select.ItemIndicator>
-        </Select.Item>
-      );
-    }
-  );
-  SelectItem.displayName = "SelectItem";
+  // const SelectItem = React.forwardRef(
+  //   (
+  //     { value, children, className, ...props }: SelectItemProps,
+  //     forwardedRef: React.Ref<HTMLDivElement>
+  //   ) => {
+  //     return (
+  //       <Select.Item
+  //         value={value}
+  //         {...props}
+  //         ref={forwardedRef}
+  //         onClick={(e) => e.stopPropagation()}
+  //         className={classnames("SelectItem", className)}
+  //       >
+  //         <Select.ItemText>{children}</Select.ItemText>
+  //         <Select.ItemIndicator className="SelectItemIndicator">
+  //           <Check />
+  //         </Select.ItemIndicator>
+  //       </Select.Item>
+  //     );
+  //   }
+  // );
+  // SelectItem.displayName = "SelectItem";
   return (
     <>
       <Head>
@@ -110,7 +110,7 @@ export default function Curriculo() {
               }}
             />
           </div>
-          <div className="campo">
+          {/* <div className="campo">
             <label htmlFor="iarea">Seletivos *</label>
             <Select.Root required>
               <Select.Trigger className="SelectTrigger" aria-label="Food">
@@ -145,10 +145,15 @@ export default function Curriculo() {
             type="hidden"
             name="_next"
             value="http://localhost:3000/curriculo"
-          ></input>
+          ></input> */}
 
           <Button className="submit">Enviar</Button>
         </form>
+
+        <Seletivos>
+          <h1>Seletivos</h1>
+          <span>Não existem processos seletivos abertos no momento</span>
+        </Seletivos>
       </Container>
       <Footer />
     </>
