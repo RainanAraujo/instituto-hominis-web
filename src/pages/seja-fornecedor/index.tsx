@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 import Head from "next/head";
 import { useRef } from "react";
 
-export default function sejaFornecedor() {
+export default function SejaFornecedor() {
   const cpnjRef = useRef<HTMLInputElement>(null);
 
   function validateCNPJ(cnpj: any) {
