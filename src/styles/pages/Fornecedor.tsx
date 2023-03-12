@@ -16,6 +16,7 @@ export const Container = styled.main`
     flex-direction: column;
     align-items: center;
     margin: 6rem 0 4rem;
+    width: 100%;
     h1 {
       text-align: center;
       color: ${(props) => props.theme.colors.black};
