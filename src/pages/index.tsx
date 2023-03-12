@@ -409,7 +409,7 @@ export default function Home({
         </Objetivos>
         <HeaderBlog>
           <div className="cabeçalho">
-            <h1>Oferecemos o melhor para você</h1>
+            <h1>Fique por dentro</h1>
           </div>
           <div className="botaoPost">
             <Link href={"/news"}>
