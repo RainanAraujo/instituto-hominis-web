@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useRef } from "react";
 
 export default function sejaFornecedor() {
-  const CNPJRef = useRef<HTMLInputElement>(null);
+  const cpnjRef = useRef<HTMLInputElement>(null);
 
   function validateCNPJ(cnpj: any) {
     cnpj = cnpj.replace(/[^\d]+/g, "");
@@ -86,7 +86,7 @@ export default function sejaFornecedor() {
             <input
               type="text"
               name="cpnj"
-              ref={CNPJRef}
+              ref={cpnjRef}
               id="icpnj"
               placeholder="Digite aqui"
               required
@@ -161,9 +161,9 @@ export default function sejaFornecedor() {
           ></input>
           <Button
             onClick={(e) => {
-              if (!validateCNPJ(CNPJRef.current?.value)) {
+              if (!validateCNPJ(cpnjRef.current?.value)) {
                 alert("CNPJ inválido");
-                CNPJRef.current?.focus();
+                cpnjRef.current?.focus();
 
                 e.preventDefault();
               }
