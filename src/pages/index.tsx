@@ -417,6 +417,10 @@ export default function Home({
             </Link>
           </div>
         </HeaderBlog>
+        {posts.length === 0 && (
+          <p className="noHave"> Ainda não há postagens...</p>
+        )}
+
         {posts.length > 0 && (
           <Blog>
             <Link
