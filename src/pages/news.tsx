@@ -94,7 +94,11 @@ export default function News({
       <Header color="secondary" />
       <Container>
         <div className="background"></div>
-        {posts && (
+        {posts.length === 0 && (
+          <p className="noHave"> Ainda não há postagens...</p>
+        )}
+
+        {posts.length > 0 && (
           <InfiniteScroll
             dataLength={posts.length}
             next={() => fetchMorePosts()}
