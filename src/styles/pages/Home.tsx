@@ -385,7 +385,8 @@ export const Blog = styled.section`
     }
     h2 {
       font-weight: 500;
-      font-size: 28px;
+      font-size: 1.6rem;
+      line-height: 1.8rem;
       color: ${(props) => props.theme.colors.black};
     }
     a {
@@ -433,6 +434,7 @@ export const Blog = styled.section`
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
   }
 
   .feed {
@@ -459,8 +461,8 @@ export const Blog = styled.section`
 
     h2 {
       font-weight: 500;
-      font-size: 28px;
-      line-height: 105.02%;
+      font-size: 1.6rem;
+      line-height: 1.8rem;
       color: ${(props) => props.theme.colors.black};
     }
     p {

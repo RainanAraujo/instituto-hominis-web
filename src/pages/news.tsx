@@ -27,13 +27,19 @@ export default function News({
   }
 
   function extractDataPosts(dataFull: any) {
+    function removeImageTag(content: string) {
+      return content.replace(/<img[^>]*>/g, "");
+    }
+
+    console.log(removeImageTag(dataFull.content));
     const array = [];
+
     array.push({
       title: dataFull.title,
       content: {
         body: dataFull.content,
-        text: new DOMParser().parseFromString(dataFull.content, "text/html")
-          .body.textContent,
+
+        text: removeImageTag(dataFull.content),
         image:
           new DOMParser()
             .parseFromString(dataFull.content, "text/html")
@@ -45,6 +51,7 @@ export default function News({
       },
       published: dataFull.published,
     });
+
     return array;
   }
 

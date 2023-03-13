@@ -29,6 +29,7 @@ export const Container = styled.main`
     }
     & > div:nth-child(2) {
       margin-top: -280px;
+      width: 100%;
     }
   }
 `;
@@ -57,10 +58,10 @@ export const Noticia = styled.div`
     }
 
     p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.84rem;
-      color: ${(props) => props.theme.colors.gray600};
+      font-weight: 400 !important;
+      font-size: 16px !important;
+      line-height: 1.84rem !important;
+      color: ${(props) => props.theme.colors.gray600} !important;
     }
   }
 
@@ -69,10 +70,10 @@ export const Noticia = styled.div`
     flex-direction: column;
     gap: 18px;
     p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.85rem;
-      color: ${(props) => props.theme.colors.gray600};
+      font-weight: 400 !important;
+      font-size: 16px !important;
+      line-height: 1.85rem !important;
+      color: ${(props) => props.theme.colors.gray600} !important;
     }
     h1 {
       font-weight: 800;
@@ -83,9 +84,14 @@ export const Noticia = styled.div`
   }
 
   .descricao {
-    font-size: 16px;
-    line-height: 1.85rem;
-    color: ${(props) => props.theme.colors.gray400};
+    width: 100%;
+    span,
+    p {
+      font-size: 1rem !important;
+      line-height: 1.85rem !important;
+      color: ${(props) => props.theme.colors.gray400} !important;
+      font-family: "Inter", sans-serif !important;
+    }
   }
   @media only screen and (max-width: 940px) {
     display: flex;
@@ -100,7 +106,8 @@ export const Noticia = styled.div`
       text-align: center;
       gap: 18px;
       h1 {
-        font-size: 24px;
+        font-size: 1.6rem;
+        line-height: 2rem;
       }
     }
     .imagem {
@@ -113,9 +120,6 @@ export const Noticia = styled.div`
         height: auto;
         aspect-ratio: inherit;
       }
-    }
-    .descricao {
-      text-align: center;
     }
   }
 `;
