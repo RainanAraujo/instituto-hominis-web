@@ -29,6 +29,7 @@ export const Container = styled.main`
       margin-bottom: 1.6rem;
       font-weight: 500;
     }
+
     p {
       color: ${(props) => props.theme.colors.gray600};
       text-align: center;

@@ -55,14 +55,21 @@ export default function Curriculo() {
             a diferença no mundo?
           </strong>
           <p>
-            Se você deseja fazer parte de um grupo de pessoas que compartilha
-            dos mesmos valores e objetivos que você, então o Instituto Hominis é
-            o lugar certo para você. Estamos constantemente buscando talentos
-            que compartilhem dos nossos valores e objetivos, que possuam
-            habilidades e experiências diversas, e que possam agregar valor e
-            contribuir para nossos projetos em andamento e futuros. Se você
-            deseja se juntar a um time engajado e dedicado a construir um mundo
-            melhor, envie seu currículo para o Instituto Hominis.
+            O Instituto Hominis é uma organização que valoriza pessoas
+            comprometidas com a promoção do bem-estar e da igualdade em todas as
+            áreas da vida, através de projetos e ações que transformam a
+            sociedade. <br /> <br />
+            Nosso time é formado por pessoas comprometidas e engajadas, que
+            acreditam na importância do trabalho em equipe para alcançar
+            resultados significativos. Se você deseja fazer parte de um grupo de
+            pessoas que compartilha dos mesmos valores e objetivos que você,
+            então o Instituto Hominis é o lugar certo para você. <br /> <br />
+            Estamos constantemente buscando talentos que compartilhem dos nossos
+            valores e objetivos, que possuam habilidades e experiências
+            diversas, e que possam agregar valor e contribuir para nossos
+            projetos em andamento e futuros. Se você deseja se juntar a um time
+            engajado e dedicado a construir um mundo melhor, envie seu currículo
+            para o Instituto Hominis.
           </p>
         </div>
         <form

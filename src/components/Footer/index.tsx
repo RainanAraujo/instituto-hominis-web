@@ -36,15 +36,17 @@ export default function Footer(
           <div className="linkColumn">
             <h3>Contate-nos</h3>
             <div className="linkGroup">
-              <Link href="#">E-mail: faleconosco@institutohominis.org.br</Link>
-              <Link href="#">Telefone: (98) 98536-7570</Link>
+              <Link href="mailto:contato@institutohominis.org.br">
+                E-mail: contato@institutohominis.org.br
+              </Link>
+              <a>Telefone: (98) 8581-1294</a>
             </div>
           </div>
           <div className="linkColumn">
             <h3>Redes sociais</h3>
             <div className="socialNetworkingIcons">
               <Link
-                href="https://api.whatsapp.com/send/?phone=5598985811294&text&type=phone_number&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=559885811294&text&type=phone_number&app_absent=0"
                 target="_blank"
               >
                 <WhatsappLogo

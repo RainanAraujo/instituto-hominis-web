@@ -68,19 +68,26 @@ export default function Header({ color = "primary" }: HeaderProps) {
     <Container color={color}>
       <div className="content" id="header">
         {color === "primary" ? (
-          <Image
+          <Link href="/">
+           <Image
             src="/images/Layer_x0020_1.svg"
             width={120}
             height={40}
             alt="Logo do Instituto Hominis"
+        
           />
+          </Link>
+         
         ) : (
+          <Link  href="/">
           <Image
             src="/images/logodark.svg"
             width={120}
             height={58}
             alt="Logo do Instituto Hominis"
           />
+          </Link>
+          
         )}
 
         <button type="button" className="HambuguerButton" onClick={clickOnMenu}>

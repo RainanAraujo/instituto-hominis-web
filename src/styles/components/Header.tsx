@@ -8,6 +8,11 @@ export const Container = styled.header<HeaderProps>`
       ? props.theme.colors.black
       : props.theme.colors.gray900};
 
+  #header {
+    img {
+      cursor: pointer;
+    }
+  }
   .content {
     width: 100%;
     max-width: 1280px;
