@@ -452,69 +452,73 @@ export default function Home({
             </Link>
 
             <div className="feed">
-              <Link
-                legacyBehavior
-                href={{
-                  pathname: "/news",
-                  query: { id: posts[1].id },
-                }}
-              >
-                <div className="card">
-                  <figure className="miniatura">
-                    <Image
-                      src={posts[1].content.image}
-                      alt="imagem"
-                      width={200}
-                      height={150}
-                    />
-                  </figure>
-                  <div className="texto">
-                    <div className="titulo">
-                      <h2>{posts[1].title}</h2>
+              {posts.length > 1 && (
+                <Link
+                  legacyBehavior
+                  href={{
+                    pathname: "/news",
+                    query: { id: posts[1].id },
+                  }}
+                >
+                  <div className="card">
+                    <figure className="miniatura">
+                      <Image
+                        src={posts[1].content.image}
+                        alt="imagem"
+                        width={200}
+                        height={150}
+                      />
+                    </figure>
+                    <div className="texto">
+                      <div className="titulo">
+                        <h2>{posts[1].title}</h2>
+                      </div>
+                      <div className="descricao">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: posts[1].content.text!,
+                          }}
+                        ></p>
+                      </div>
+                      <a href="#">Ver mais</a>
                     </div>
-                    <div className="descricao">
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: posts[1].content.text!,
-                        }}
-                      ></p>
-                    </div>
-                    <a href="#">Ver mais</a>
                   </div>
-                </div>
-              </Link>
-              <Link
-                legacyBehavior
-                href={{
-                  pathname: "/news",
-                  query: { id: posts[2].id },
-                }}
-              >
-                <div className="card">
-                  <figure className="miniatura">
-                    <Image
-                      src={posts[2].content.image}
-                      alt="imagem"
-                      width={200}
-                      height={150}
-                    />
-                  </figure>
-                  <div className="texto">
-                    <div className="titulo">
-                      <h2>{posts[2].title}</h2>
-                    </div>
-                    <div className="descricao">
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: posts[2].content.text!,
-                        }}
-                      ></p>
-                    </div>
+                </Link>
+              )}
+              {posts.length > 2 && (
+                <Link
+                  legacyBehavior
+                  href={{
+                    pathname: "/news",
+                    query: { id: posts[2].id },
+                  }}
+                >
+                  <div className="card">
+                    <figure className="miniatura">
+                      <Image
+                        src={posts[2].content.image}
+                        alt="imagem"
+                        width={200}
+                        height={150}
+                      />
+                    </figure>
+                    <div className="texto">
+                      <div className="titulo">
+                        <h2>{posts[2].title}</h2>
+                      </div>
+                      <div className="descricao">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: posts[2].content.text!,
+                          }}
+                        ></p>
+                      </div>
 
-                    <a>Ver mais</a>
+                      <a>Ver mais</a>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              )}
             </div>
           </Blog>
         )}
