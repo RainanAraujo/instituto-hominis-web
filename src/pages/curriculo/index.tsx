@@ -73,7 +73,7 @@ export default function Curriculo() {
           </p>
         </div>
         <form
-          action="https://formsubmit.co/jadson.hudson78@gmail.com"
+          action="https://formsubmit.co/contato@institutohominis.org.br"
           method="POST"
           encType="multipart/form-data"
         >
