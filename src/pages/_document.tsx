@@ -50,8 +50,11 @@ export default class MyDocument extends Document {
           />
           <meta name="robots" content="index, follow" />
           <meta name="googlebot" content="index, follow" />
-          <meta property="og:image" content="/images/logodark.svg" />
-          <meta property="og:image:type" content="image/svg" />
+          <meta
+            property="og:image"
+            content="https://www.institutohominis.org.br/images/thumbnail.jpg"
+          />
+
           <meta property="og:image:width" content="120" />
           <meta property="og:image:height" content="86" />
           <meta property="og:site_name" content="Instituto Hominis" />
