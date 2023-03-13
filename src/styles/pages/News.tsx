@@ -17,7 +17,7 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px;
+    padding: 40px;
     color: ${(props) => props.theme.colors.gray600};
   }
   & > div:nth-child(2) {

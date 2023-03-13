@@ -39,7 +39,7 @@ export default function Footer(
               <Link href="mailto:contato@institutohominis.org.br">
                 E-mail: contato@institutohominis.org.br
               </Link>
-              <a>Telefone: (98) 8581-1294</a>
+              <a>Telefone: (98) 98581-1294</a>
             </div>
           </div>
           <div className="linkColumn">
