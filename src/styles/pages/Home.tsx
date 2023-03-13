@@ -458,7 +458,12 @@ export const Blog = styled.section`
         aspect-ratio: inherit;
       }
     }
-
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme.colors.blue300};
+      font-weight: 600;
+      font-size: 16px;
+    }
     h2 {
       font-weight: 500;
       font-size: 1.6rem;
