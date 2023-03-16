@@ -30,8 +30,6 @@ export default function News({
     function removeImageTag(content: string) {
       return content.replace(/<img[^>]*>/g, "");
     }
-
-    console.log(removeImageTag(dataFull.content));
     const array = [];
 
     array.push({

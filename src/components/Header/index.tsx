@@ -55,7 +55,7 @@ export default function Header({ color = "primary" }: HeaderProps) {
             </li>
             <li>
               <Link href="/seja-fornecedor" target="_self">
-                Faça parte
+                Seja um fornecedor
               </Link>
             </li>
           </ul>
@@ -69,25 +69,22 @@ export default function Header({ color = "primary" }: HeaderProps) {
       <div className="content" id="header">
         {color === "primary" ? (
           <Link href="/">
-           <Image
-            src="/images/Layer_x0020_1.svg"
-            width={120}
-            height={40}
-            alt="Logo do Instituto Hominis"
-        
-          />
+            <Image
+              src="/images/Layer_x0020_1.svg"
+              width={120}
+              height={40}
+              alt="Logo do Instituto Hominis"
+            />
           </Link>
-         
         ) : (
-          <Link  href="/">
-          <Image
-            src="/images/logodark.svg"
-            width={120}
-            height={58}
-            alt="Logo do Instituto Hominis"
-          />
+          <Link href="/">
+            <Image
+              src="/images/logodark.svg"
+              width={120}
+              height={58}
+              alt="Logo do Instituto Hominis"
+            />
           </Link>
-          
         )}
 
         <button type="button" className="HambuguerButton" onClick={clickOnMenu}>
