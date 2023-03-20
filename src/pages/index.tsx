@@ -32,6 +32,8 @@ import {
   UserGear,
   Stack,
   X,
+  EnvelopeSimple,
+  User,
 } from "phosphor-react";
 import ButtonToTop from "@/components/ButtonToTop";
 import React, { useRef, useState } from "react";
@@ -42,6 +44,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { TopBar } from "@/styles/components/Header";
 
 interface Post {
   title: any;
@@ -109,6 +112,33 @@ export default function Home({
         <title>Instituto Hominis</title>
       </Head>
       <Container>
+        <TopBar>
+          <div className="content">
+            <Link href="">
+              <div className="link">
+                <Phone size={16} weight="fill" />
+                (98) 98581-1294
+              </div>
+            </Link>
+            <Link href="mailto:contato@institutohominis.org.br" target="_blank">
+              <div className="link">
+                <EnvelopeSimple size={16} weight="fill" />
+                <span> contato@institutohominis.org.br</span>
+              </div>
+            </Link>
+            <Link
+              href={
+                "https://sso.godaddy.com/?app=o365&realm=pass&marketid=pt-BR"
+              }
+              target="_blank"
+            >
+              <div className="link mobile">
+                <User size={16} weight="fill" />
+                <span>Área do Colaborador</span>
+              </div>
+            </Link>
+          </div>
+        </TopBar>
         <Header color="primary" />
         <Presentation>
           <div className="content">

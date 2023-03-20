@@ -1,7 +1,11 @@
-import { Container, ContainerMobileMenu } from "@/styles/components/Header";
+import {
+  Container,
+  ContainerMobileMenu,
+  TopBar,
+} from "@/styles/components/Header";
 import Image from "next/image";
 import Link from "next/link";
-import { List, X } from "phosphor-react";
+import { Envelope, EnvelopeSimple, List, Phone, User, X } from "phosphor-react";
 import { useState, useEffect } from "react";
 
 interface HeaderProps {
@@ -65,70 +69,79 @@ export default function Header({ color = "primary" }: HeaderProps) {
   }
 
   return (
-    <Container color={color}>
-      <div className="content" id="header">
-        {color === "primary" ? (
-          <Link href="/">
-            <Image
-              src="/images/Layer_x0020_1.svg"
-              width={120}
-              height={40}
-              alt="Logo do Instituto Hominis"
-            />
-          </Link>
-        ) : (
-          <Link href="/">
-            <Image
-              src="/images/logodark.svg"
-              width={120}
-              height={58}
-              alt="Logo do Instituto Hominis"
-            />
-          </Link>
-        )}
+    <>
+      <Container color={color}>
+        <div className="content" id="header">
+          {color === "primary" ? (
+            <Link href="/">
+              <Image
+                src="/images/Layer_x0020_1.svg"
+                width={120}
+                height={40}
+                alt="Logo do Instituto Hominis"
+              />
+            </Link>
+          ) : (
+            <Link href="/">
+              <Image
+                src="/images/logodark.svg"
+                width={120}
+                height={58}
+                alt="Logo do Instituto Hominis"
+              />
+            </Link>
+          )}
 
-        <button type="button" className="HambuguerButton" onClick={clickOnMenu}>
-          <List size={32} />
-        </button>
-        {mobileMenu ? (
-          <MobileMenu />
-        ) : (
-          <menu className="menu">
-            <ul>
-              <li>
-                <Link href="/" target="_self">
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link href="/aboutUs" target="_self">
-                  Quem somos
-                </Link>
-              </li>
-              <li>
-                <Link href="/news" target="_self">
-                  Notícias
-                </Link>
-              </li>
-              <li>
-                <Link href="https://linktr.ee/institutohominis" target="_blank">
-                  Contato
-                </Link>
-              </li>
-              <li>
-                <Link href="/curriculo" target="_self">
-                  Faça parte
-                </Link>
-              </li>
-              <li>
-                <Link href="/seja-fornecedor" target="_self">
-                  Seja um fornecedor
-                </Link>
-              </li>
-            </ul>
-          </menu>
-        )}
-      </div>
-    </Container>
+          <button
+            type="button"
+            className="HambuguerButton"
+            onClick={clickOnMenu}
+          >
+            <List size={32} />
+          </button>
+          {mobileMenu ? (
+            <MobileMenu />
+          ) : (
+            <menu className="menu">
+              <ul>
+                <li>
+                  <Link href="/" target="_self">
+                    Início
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/aboutUs" target="_self">
+                    Quem somos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/news" target="_self">
+                    Notícias
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://linktr.ee/institutohominis"
+                    target="_blank"
+                  >
+                    Contato
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/curriculo" target="_self">
+                    Faça parte
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/seja-fornecedor" target="_self">
+                    Seja um fornecedor
+                  </Link>
+                </li>
+              </ul>
+            </menu>
+          )}
+        </div>
+      </Container>
+    </>
   );
 }

@@ -1,7 +1,43 @@
 import styled from "styled-components";
+
 interface HeaderProps {
   color?: "primary" | "secondary";
 }
+
+export const TopBar = styled.div`
+  width: 100%;
+  .content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 80px;
+    @media (max-width: 940px) {
+      .link {
+        display: none;
+      }
+      .mobile {
+        display: flex;
+      }
+      justify-content: center;
+    }
+  }
+  background-color: ${(props) => props.theme.colors.blue300};
+
+  color: ${(props) => props.theme.colors.white};
+  .link {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-weight: 500;
+  }
+`;
+
 export const Container = styled.header<HeaderProps>`
   background-color: ${(props) =>
     props.color === "primary"
