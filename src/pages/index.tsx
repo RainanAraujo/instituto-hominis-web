@@ -127,9 +127,7 @@ export default function Home({
               </div>
             </Link>
             <Link
-              href={
-                "https://sso.godaddy.com/?app=o365&realm=pass&marketid=pt-BR"
-              }
+              href={"https://sso.godaddy.com/?app=email&realm=pass"}
               target="_blank"
             >
               <div className="link mobile">
