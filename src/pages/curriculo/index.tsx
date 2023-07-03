@@ -1,18 +1,20 @@
-import { Container, Seletivos } from "@/styles/pages/Curriculo";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
-import Head from "next/head";
-import * as Select from "@radix-ui/react-select";
-import React from "react";
-import classnames from "classnames";
-import { CaretDown, CaretUp, Check } from "phosphor-react";
+import { Container, Seletivos } from '@/styles/pages/Curriculo'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Button from '@/components/Button'
+import Head from 'next/head'
+import React, { FormEvent } from 'react'
+import axios from 'axios'
 
 export default function Curriculo() {
-  const [nameFile, setNameFile] = React.useState(
-    "Clique para anexar o currículo"
-  );
-
+  const [nameFile, setNameFile] = React.useState('Clique para anexar o currículo')
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formElement = new FormData(e.target as HTMLFormElement)
+    axios.post('/api/sendEmail', formElement).then((res) => {
+      alert('Mensagem enviada com sucesso!')
+    })
+  }
   // interface SelectItemProps extends React.ComponentProps<typeof Select.Item> {
   //   value: string;
   //   children: React.ReactNode;
@@ -50,33 +52,19 @@ export default function Curriculo() {
       <Container className="limitWidth">
         <div className="header">
           <h1> Faça parte do Hominis</h1>
-          <strong>
-            Você é uma pessoa apaixonada por ajudar os outros e que deseja fazer
-            a diferença no mundo?
-          </strong>
+          <strong>Você é uma pessoa apaixonada por ajudar os outros e que deseja fazer a diferença no mundo?</strong>
           <p>
-            O Instituto Hominis é uma organização que valoriza pessoas
-            comprometidas com a promoção do bem-estar e da igualdade em todas as
-            áreas da vida, através de projetos e ações que transformam a
-            sociedade. <br /> <br />
-            Nosso time é formado por pessoas comprometidas e engajadas, que
-            acreditam na importância do trabalho em equipe para alcançar
-            resultados significativos. Se você deseja fazer parte de um grupo de
-            pessoas que compartilha dos mesmos valores e objetivos que você,
-            então o Instituto Hominis é o lugar certo para você. <br /> <br />
-            Estamos constantemente buscando talentos que compartilhem dos nossos
-            valores e objetivos, que possuam habilidades e experiências
-            diversas, e que possam agregar valor e contribuir para nossos
-            projetos em andamento e futuros. Se você deseja se juntar a um time
-            engajado e dedicado a construir um mundo melhor, envie seu currículo
-            para o Instituto Hominis.
+            O Instituto Hominis é uma organização que valoriza pessoas comprometidas com a promoção do bem-estar e da igualdade em todas as
+            áreas da vida, através de projetos e ações que transformam a sociedade. <br /> <br />
+            Nosso time é formado por pessoas comprometidas e engajadas, que acreditam na importância do trabalho em equipe para alcançar
+            resultados significativos. Se você deseja fazer parte de um grupo de pessoas que compartilha dos mesmos valores e objetivos que
+            você, então o Instituto Hominis é o lugar certo para você. <br /> <br />
+            Estamos constantemente buscando talentos que compartilhem dos nossos valores e objetivos, que possuam habilidades e experiências
+            diversas, e que possam agregar valor e contribuir para nossos projetos em andamento e futuros. Se você deseja se juntar a um
+            time engajado e dedicado a construir um mundo melhor, envie seu currículo para o Instituto Hominis.
           </p>
         </div>
-        <form
-          action="https://formsubmit.co/contato@institutohominis.org.br"
-          method="POST"
-          encType="multipart/form-data"
-        >
+        <form onSubmit={handleSubmit}>
           <div className="campo">
             <label htmlFor="inome">Nome *</label>
             <input
@@ -101,22 +89,31 @@ export default function Curriculo() {
           </div>
           <div className="campo">
             <label>Seu currículo *</label>
-            <label htmlFor="icurrículo" id="arquivo">
+            <label
+              htmlFor="icurrículo"
+              id="arquivo"
+            >
               {nameFile}
             </label>
             <input
               type="file"
-              name="attachment"
+              name="file"
               accept="image/png, image/jpeg, application/pdf"
               id="icurrículo"
               required
               onChange={(e) => {
                 if (e.target.files) {
-                  setNameFile(e.target.files[0].name);
+                  setNameFile(e.target.files[0].name)
                 }
               }}
             />
+            <input
+              type="hidden"
+              name="typeSubject"
+              value="faça parte"
+            />
           </div>
+
           {/* <div className="campo">
             <label htmlFor="iarea">Seletivos *</label>
             <Select.Root required>
@@ -164,5 +161,5 @@ export default function Curriculo() {
       </Container>
       <Footer />
     </>
-  );
+  )
 }

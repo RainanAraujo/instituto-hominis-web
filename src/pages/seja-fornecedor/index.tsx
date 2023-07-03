@@ -1,53 +1,62 @@
-import { Container } from "@/styles/pages/Fornecedor";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
-import Head from "next/head";
-import { useRef } from "react";
+import { Container } from '@/styles/pages/Fornecedor'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Button from '@/components/Button'
+import Head from 'next/head'
+import { FormEvent, useRef } from 'react'
+import axios from 'axios'
 
 export default function SejaFornecedor() {
-  const cpnjRef = useRef<HTMLInputElement>(null);
+  const cpnjRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formElement = new FormData(e.target as HTMLFormElement)
+    axios.post('/api/sendEmail', formElement).then((res) => {
+      alert('Mensagem enviada com sucesso!')
+    })
+  }
 
   function validateCNPJ(cnpj: any) {
-    cnpj = cnpj.replace(/[^\d]+/g, "");
-    if (cnpj == "") return false;
-    if (cnpj.length != 14) return false;
+    cnpj = cnpj.replace(/[^\d]+/g, '')
+    if (cnpj == '') return false
+    if (cnpj.length != 14) return false
     if (
-      cnpj == "00000000000000" ||
-      cnpj == "11111111111111" ||
-      cnpj == "22222222222222" ||
-      cnpj == "33333333333333" ||
-      cnpj == "44444444444444" ||
-      cnpj == "55555555555555" ||
-      cnpj == "66666666666666" ||
-      cnpj == "77777777777777" ||
-      cnpj == "88888888888888" ||
-      cnpj == "99999999999999"
+      cnpj == '00000000000000' ||
+      cnpj == '11111111111111' ||
+      cnpj == '22222222222222' ||
+      cnpj == '33333333333333' ||
+      cnpj == '44444444444444' ||
+      cnpj == '55555555555555' ||
+      cnpj == '66666666666666' ||
+      cnpj == '77777777777777' ||
+      cnpj == '88888888888888' ||
+      cnpj == '99999999999999'
     )
-      return false;
-    var tamanho = cnpj.length - 2;
-    var numeros = cnpj.substring(0, tamanho);
-    var digitos = cnpj.substring(tamanho);
-    var soma = 0;
-    var pos = tamanho - 7;
+      return false
+    var tamanho = cnpj.length - 2
+    var numeros = cnpj.substring(0, tamanho)
+    var digitos = cnpj.substring(tamanho)
+    var soma = 0
+    var pos = tamanho - 7
     for (var i = tamanho; i >= 1; i--) {
-      soma += numeros.charAt(tamanho - i) * pos--;
-      if (pos < 2) pos = 9;
+      soma += numeros.charAt(tamanho - i) * pos--
+      if (pos < 2) pos = 9
     }
-    var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-    if (resultado != digitos.charAt(0)) return false;
+    var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11)
+    if (resultado != digitos.charAt(0)) return false
 
-    tamanho = tamanho + 1;
-    numeros = cnpj.substring(0, tamanho);
-    soma = 0;
-    pos = tamanho - 7;
+    tamanho = tamanho + 1
+    numeros = cnpj.substring(0, tamanho)
+    soma = 0
+    pos = tamanho - 7
     for (var i = tamanho; i >= 1; i--) {
-      soma += numeros.charAt(tamanho - i) * pos--;
-      if (pos < 2) pos = 9;
+      soma += numeros.charAt(tamanho - i) * pos--
+      if (pos < 2) pos = 9
     }
-    resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-    if (resultado != digitos.charAt(1)) return false;
-    return true;
+    resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11)
+    if (resultado != digitos.charAt(1)) return false
+    return true
   }
   return (
     <>
@@ -66,11 +75,7 @@ export default function SejaFornecedor() {
             rejects, dislikes, or avoids pleasure itself.
           </p> */}
         </div>
-        <form
-          action="https://formsubmit.co/contato@institutohominis.org.br"
-          method="POST"
-          encType="multipart/form-data"
-        >
+        <form onSubmit={handleSubmit}>
           <div className="campo">
             <label htmlFor="irazao">Razão social *</label>
             <input
@@ -93,9 +98,7 @@ export default function SejaFornecedor() {
             />
           </div>
           <div className="campo">
-            <label htmlFor="icnaes">
-              CNAES (atividades econômicas exercidas) *
-            </label>
+            <label htmlFor="icnaes">CNAES (atividades econômicas exercidas) *</label>
             <input
               type="text"
               name="cnaes"
@@ -148,24 +151,18 @@ export default function SejaFornecedor() {
               required
             />
           </div>
-          <input type="hidden" name="_subject" value="Fornecedor" />
           <input
             type="hidden"
-            name="_autoresponse"
-            value="Agradecemos pela submissão"
-          ></input>
-          <input
-            type="hidden"
-            name="_next"
-            value="http://localhost:3000/seja-fornecedor"
-          ></input>
+            name="typeSubject"
+            value="fornecedor"
+          />
           <Button
             onClick={(e) => {
               if (!validateCNPJ(cpnjRef.current?.value)) {
-                alert("CNPJ inválido");
-                cpnjRef.current?.focus();
+                alert('CNPJ inválido')
+                cpnjRef.current?.focus()
 
-                e.preventDefault();
+                e.preventDefault()
               }
             }}
           >
@@ -175,5 +172,5 @@ export default function SejaFornecedor() {
       </Container>
       <Footer />
     </>
-  );
+  )
 }
